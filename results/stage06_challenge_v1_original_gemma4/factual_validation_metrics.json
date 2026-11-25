@@ -1,0 +1,5818 @@
+{
+  "configuration": {
+    "runner_format_version": 4,
+    "freeze_manifest_sha256": "05f7bdbd156ba9bb8013f15a57f1e39b4af9fcfa32e006ff5f648a7be30279c7",
+    "scoring_amendment_sha256": "72ee5287d630278656e25fe84ab173318ee37768fe6bbfa660a092265a165e49",
+    "dataset": "challenge_v1",
+    "input_sha256": "ff46bf26471bea90c2c06692c5c2d57cb5c84fe770a027786a5751c36125d282",
+    "output_schema_sha256": "5ea81c884e2c8ec058776fd5d855b0d51505188c17357bc53c5e4cb6693c7e6d",
+    "inference_order_sha256": "c15cc80e5e24f91b2a2cb7e2e72bef0cb76aeadcde00752d0437ed142fdbc8e4",
+    "parser_version": [
+      "gemma4_native_v1",
+      "gemma4_json_fence_v1"
+    ],
+    "native_decoder_sha256": "7d75137bda691ab71120206d98c79147fa54f36dd0e3f3b3a6fcb63f8ea25e8a",
+    "fence_normalizer_sha256": "87e95207260cbef63706da2a60f3c8d3af7b9065a4a7696eb4627a6f76800213",
+    "available_cases": 230,
+    "prompt_version": "challenge_v1_contract_2",
+    "benchmark_contract_version": "challenge_v1_contract_2",
+    "scoring_contract_version": "challenge_v1_scoring_contract_3",
+    "model_id": "google/gemma-4-31B-it",
+    "requested_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+    "model_loading": {
+      "dtype": "bfloat16",
+      "device_map": "auto",
+      "local_files_only": true
+    },
+    "quantization": {
+      "load_in_4bit": true,
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_use_double_quant": true
+    },
+    "generation": {
+      "do_sample": false,
+      "temperature": 1.0,
+      "top_k": 50,
+      "top_p": 1.0,
+      "num_beams": 1,
+      "num_return_sequences": 1,
+      "max_new_tokens": 1024,
+      "use_cache": true,
+      "return_dict_in_generate": false,
+      "bos_token_id": 2,
+      "eos_token_id": [
+        1,
+        106,
+        50
+      ],
+      "pad_token_id": 0,
+      "seed": 42,
+      "enable_thinking": false,
+      "add_generation_prompt": true
+    },
+    "decoding": {
+      "skip_special_tokens": false,
+      "clean_up_tokenization_spaces": false,
+      "response_decoding": "gemma4_native_v1"
+    },
+    "response_normalization": "gemma4_json_fence_v1",
+    "checkpoint_kind": "original"
+  },
+  "primary_role": "different_without_ndc",
+  "supplementary_role": "supplementary",
+  "retrieval_replay_sha256": "ffab21b4543dadeba70df4c1eca3cea2f4b68f65873d1a49b28a0d1286d5e499",
+  "private_input_sha256": {
+    "benchmark.PRIVATE.jsonl": "8fd146ae2dea44e90d2fc83a3f5901f3f40a3b8ade3a6ee4eee827d43e299fb9",
+    "common_evidence.PRIVATE.jsonl": "ff46bf26471bea90c2c06692c5c2d57cb5c84fe770a027786a5751c36125d282",
+    "ingredient_identity_mapping.PRIVATE.jsonl": "1176694c7765ec10a8444c607cf59738d68cb724bf2f72e63347968c3f5ece26"
+  },
+  "prediction_ledger_sha256": "2df2ef9ceef6e1195ad95c6d22cac451b9d440edf5e4c556b079294460dc3c84",
+  "inference_aggregate_sha256": "0dc4936c82dc83c036a3c0f7bdc68f386d127b2b220d7eff3ae39c06a956c9b5",
+  "model_load_attempts": [
+    {
+      "python_version": "3.12.3",
+      "package_versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "5.16.1",
+        "accelerate": "1.13.0",
+        "bitsandbytes": "0.50.2",
+        "huggingface-hub": "1.17.0",
+        "tokenizers": "0.23.1",
+        "jsonschema": "4.26.0"
+      },
+      "loaded_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "load_seconds": 201.497032,
+      "load_gpu_memory": {
+        "peak_allocated_bytes": 18302838272,
+        "peak_reserved_bytes": 18335399936
+      },
+      "gpu_name": "NVIDIA A100-SXM4-80GB",
+      "gpu_total_bytes": 85094825984,
+      "torch_cuda_version": "12.8"
+    },
+    {
+      "python_version": "3.12.3",
+      "package_versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "5.16.1",
+        "accelerate": "1.13.0",
+        "bitsandbytes": "0.50.2",
+        "huggingface-hub": "1.17.0",
+        "tokenizers": "0.23.1",
+        "jsonschema": "4.26.0"
+      },
+      "loaded_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "load_seconds": 164.203349,
+      "load_gpu_memory": {
+        "peak_allocated_bytes": 18302838272,
+        "peak_reserved_bytes": 18335399936
+      },
+      "gpu_name": "NVIDIA A100-SXM4-80GB",
+      "gpu_total_bytes": 85094825984,
+      "torch_cuda_version": "12.8"
+    }
+  ],
+  "models": {
+    "original_gemma4": {
+      "overall": {
+        "counts": {
+          "abstention_target_requests": 22,
+          "cases": 230,
+          "correct_abstentions": 0,
+          "correct_comparisons": 196,
+          "correct_full_formulation": 127,
+          "correct_statuses": 389,
+          "correct_unique_ndc": 372,
+          "full_formulation_target_requests": 134,
+          "ingredient_fn": 10,
+          "ingredient_fp": 0,
+          "ingredient_set_exact": 400,
+          "ingredient_target_requests": 409,
+          "ingredient_tp": 656,
+          "invalid_outputs": 27,
+          "joint_correct_cases": 194,
+          "product_requests": 431,
+          "supported_comparison_cases": 201,
+          "unique_ndc_target_requests": 381,
+          "unknown_ingredient_names": 0,
+          "valid_outputs": 203
+        },
+        "valid_output_rate": {
+          "numerator": 203,
+          "denominator": 230,
+          "value": 0.8826086956521739
+        },
+        "joint_case_accuracy": {
+          "numerator": 194,
+          "denominator": 230,
+          "value": 0.8434782608695652
+        },
+        "ingredient_set_accuracy": {
+          "numerator": 400,
+          "denominator": 409,
+          "value": 0.9779951100244498
+        },
+        "comparison_accuracy": {
+          "numerator": 196,
+          "denominator": 201,
+          "value": 0.9751243781094527
+        },
+        "abstention_accuracy": {
+          "numerator": 0,
+          "denominator": 22,
+          "value": 0.0
+        },
+        "unique_ndc_accuracy": {
+          "numerator": 372,
+          "denominator": 381,
+          "value": 0.9763779527559056
+        },
+        "full_formulation_accuracy": {
+          "numerator": 127,
+          "denominator": 134,
+          "value": 0.9477611940298507
+        },
+        "ingredient_precision": {
+          "numerator": 656,
+          "denominator": 656,
+          "value": 1.0
+        },
+        "ingredient_recall": {
+          "numerator": 656,
+          "denominator": 666,
+          "value": 0.984984984984985
+        },
+        "ingredient_f1": {
+          "numerator": 1312,
+          "denominator": 1322,
+          "value": 0.9924357034795764
+        },
+        "family_groups": 153
+      },
+      "by_role": {
+        "ambiguity": {
+          "counts": {
+            "abstention_target_requests": 22,
+            "cases": 22,
+            "correct_abstentions": 0,
+            "correct_statuses": 0,
+            "invalid_outputs": 22,
+            "joint_correct_cases": 0,
+            "product_requests": 22
+          },
+          "valid_output_rate": {
+            "numerator": 0,
+            "denominator": 22,
+            "value": 0.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 0,
+            "denominator": 22,
+            "value": 0.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "comparison_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 22,
+            "value": 0.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "full_formulation_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "ingredient_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "ingredient_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "ingredient_f1": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "family_groups": 21
+        },
+        "different_with_ndc": {
+          "counts": {
+            "cases": 86,
+            "correct_comparisons": 85,
+            "correct_full_formulation": 26,
+            "correct_statuses": 172,
+            "correct_unique_ndc": 170,
+            "full_formulation_target_requests": 26,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 172,
+            "ingredient_target_requests": 172,
+            "ingredient_tp": 304,
+            "joint_correct_cases": 85,
+            "product_requests": 172,
+            "supported_comparison_cases": 86,
+            "unique_ndc_target_requests": 170,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 86
+          },
+          "valid_output_rate": {
+            "numerator": 86,
+            "denominator": 86,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 85,
+            "denominator": 86,
+            "value": 0.9883720930232558
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 172,
+            "denominator": 172,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 85,
+            "denominator": 86,
+            "value": 0.9883720930232558
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 170,
+            "denominator": 170,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 26,
+            "denominator": 26,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 304,
+            "denominator": 304,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 304,
+            "denominator": 304,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 608,
+            "denominator": 608,
+            "value": 1.0
+          },
+          "family_groups": 48
+        },
+        "different_without_ndc": {
+          "counts": {
+            "cases": 34,
+            "correct_comparisons": 34,
+            "correct_full_formulation": 23,
+            "correct_statuses": 67,
+            "correct_unique_ndc": 65,
+            "full_formulation_target_requests": 23,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 68,
+            "ingredient_target_requests": 68,
+            "ingredient_tp": 110,
+            "joint_correct_cases": 33,
+            "product_requests": 68,
+            "supported_comparison_cases": 34,
+            "unique_ndc_target_requests": 65,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 34
+          },
+          "valid_output_rate": {
+            "numerator": 34,
+            "denominator": 34,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 33,
+            "denominator": 34,
+            "value": 0.9705882352941176
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 68,
+            "denominator": 68,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 34,
+            "denominator": 34,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 65,
+            "denominator": 65,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 23,
+            "denominator": 23,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 110,
+            "denominator": 110,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 110,
+            "denominator": 110,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 220,
+            "denominator": 220,
+            "value": 1.0
+          },
+          "family_groups": 17
+        },
+        "same_ingredient_control": {
+          "counts": {
+            "cases": 80,
+            "correct_comparisons": 76,
+            "correct_full_formulation": 71,
+            "correct_statuses": 142,
+            "correct_unique_ndc": 129,
+            "full_formulation_target_requests": 77,
+            "ingredient_fn": 8,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 152,
+            "ingredient_target_requests": 160,
+            "ingredient_tp": 230,
+            "invalid_outputs": 4,
+            "joint_correct_cases": 69,
+            "product_requests": 160,
+            "supported_comparison_cases": 80,
+            "unique_ndc_target_requests": 137,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 76
+          },
+          "valid_output_rate": {
+            "numerator": 76,
+            "denominator": 80,
+            "value": 0.95
+          },
+          "joint_case_accuracy": {
+            "numerator": 69,
+            "denominator": 80,
+            "value": 0.8625
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 152,
+            "denominator": 160,
+            "value": 0.95
+          },
+          "comparison_accuracy": {
+            "numerator": 76,
+            "denominator": 80,
+            "value": 0.95
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 129,
+            "denominator": 137,
+            "value": 0.9416058394160584
+          },
+          "full_formulation_accuracy": {
+            "numerator": 71,
+            "denominator": 77,
+            "value": 0.922077922077922
+          },
+          "ingredient_precision": {
+            "numerator": 230,
+            "denominator": 230,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 230,
+            "denominator": 238,
+            "value": 0.9663865546218487
+          },
+          "ingredient_f1": {
+            "numerator": 460,
+            "denominator": 468,
+            "value": 0.9829059829059829
+          },
+          "family_groups": 82
+        },
+        "supplementary": {
+          "counts": {
+            "cases": 8,
+            "correct_comparisons": 1,
+            "correct_full_formulation": 7,
+            "correct_statuses": 8,
+            "correct_unique_ndc": 8,
+            "full_formulation_target_requests": 8,
+            "ingredient_fn": 2,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 8,
+            "ingredient_target_requests": 9,
+            "ingredient_tp": 12,
+            "invalid_outputs": 1,
+            "joint_correct_cases": 7,
+            "product_requests": 9,
+            "supported_comparison_cases": 1,
+            "unique_ndc_target_requests": 9,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 7
+          },
+          "valid_output_rate": {
+            "numerator": 7,
+            "denominator": 8,
+            "value": 0.875
+          },
+          "joint_case_accuracy": {
+            "numerator": 7,
+            "denominator": 8,
+            "value": 0.875
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 8,
+            "denominator": 9,
+            "value": 0.8888888888888888
+          },
+          "comparison_accuracy": {
+            "numerator": 1,
+            "denominator": 1,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 8,
+            "denominator": 9,
+            "value": 0.8888888888888888
+          },
+          "full_formulation_accuracy": {
+            "numerator": 7,
+            "denominator": 8,
+            "value": 0.875
+          },
+          "ingredient_precision": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 12,
+            "denominator": 14,
+            "value": 0.8571428571428571
+          },
+          "ingredient_f1": {
+            "numerator": 24,
+            "denominator": 26,
+            "value": 0.9230769230769231
+          },
+          "family_groups": 8
+        }
+      },
+      "by_category": {
+        "conventional_oral_analgesic_cold_allergy": {
+          "counts": {
+            "abstention_target_requests": 1,
+            "cases": 29,
+            "correct_abstentions": 0,
+            "correct_comparisons": 21,
+            "correct_full_formulation": 39,
+            "correct_statuses": 47,
+            "correct_unique_ndc": 39,
+            "full_formulation_target_requests": 40,
+            "ingredient_fn": 2,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 48,
+            "ingredient_target_requests": 49,
+            "ingredient_tp": 74,
+            "invalid_outputs": 2,
+            "joint_correct_cases": 26,
+            "product_requests": 50,
+            "supported_comparison_cases": 21,
+            "unique_ndc_target_requests": 40,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 27
+          },
+          "valid_output_rate": {
+            "numerator": 27,
+            "denominator": 29,
+            "value": 0.9310344827586207
+          },
+          "joint_case_accuracy": {
+            "numerator": 26,
+            "denominator": 29,
+            "value": 0.896551724137931
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 48,
+            "denominator": 49,
+            "value": 0.9795918367346939
+          },
+          "comparison_accuracy": {
+            "numerator": 21,
+            "denominator": 21,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 1,
+            "value": 0.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 39,
+            "denominator": 40,
+            "value": 0.975
+          },
+          "full_formulation_accuracy": {
+            "numerator": 39,
+            "denominator": 40,
+            "value": 0.975
+          },
+          "ingredient_precision": {
+            "numerator": 74,
+            "denominator": 74,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 74,
+            "denominator": 76,
+            "value": 0.9736842105263158
+          },
+          "ingredient_f1": {
+            "numerator": 148,
+            "denominator": 150,
+            "value": 0.9866666666666667
+          },
+          "family_groups": 21
+        },
+        "dental_otc": {
+          "counts": {
+            "cases": 7,
+            "correct_comparisons": 7,
+            "correct_statuses": 14,
+            "correct_unique_ndc": 14,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 14,
+            "ingredient_target_requests": 14,
+            "ingredient_tp": 16,
+            "joint_correct_cases": 7,
+            "product_requests": 14,
+            "supported_comparison_cases": 7,
+            "unique_ndc_target_requests": 14,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 7
+          },
+          "valid_output_rate": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "ingredient_precision": {
+            "numerator": 16,
+            "denominator": 16,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 16,
+            "denominator": 16,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 32,
+            "denominator": 32,
+            "value": 1.0
+          },
+          "family_groups": 5
+        },
+        "mixed_categories": {
+          "counts": {
+            "abstention_target_requests": 3,
+            "cases": 30,
+            "correct_abstentions": 0,
+            "correct_comparisons": 26,
+            "correct_full_formulation": 12,
+            "correct_statuses": 54,
+            "correct_unique_ndc": 54,
+            "full_formulation_target_requests": 12,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 54,
+            "ingredient_target_requests": 54,
+            "ingredient_tp": 91,
+            "invalid_outputs": 3,
+            "joint_correct_cases": 26,
+            "product_requests": 57,
+            "supported_comparison_cases": 27,
+            "unique_ndc_target_requests": 54,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 27
+          },
+          "valid_output_rate": {
+            "numerator": 27,
+            "denominator": 30,
+            "value": 0.9
+          },
+          "joint_case_accuracy": {
+            "numerator": 26,
+            "denominator": 30,
+            "value": 0.8666666666666667
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 54,
+            "denominator": 54,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 26,
+            "denominator": 27,
+            "value": 0.9629629629629629
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 3,
+            "value": 0.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 54,
+            "denominator": 54,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 91,
+            "denominator": 91,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 91,
+            "denominator": 91,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 182,
+            "denominator": 182,
+            "value": 1.0
+          },
+          "family_groups": 13
+        },
+        "other_or_unclassified_otc": {
+          "counts": {
+            "abstention_target_requests": 1,
+            "cases": 10,
+            "correct_abstentions": 0,
+            "correct_comparisons": 8,
+            "correct_full_formulation": 4,
+            "correct_statuses": 14,
+            "correct_unique_ndc": 14,
+            "full_formulation_target_requests": 6,
+            "ingredient_fn": 2,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 16,
+            "ingredient_target_requests": 18,
+            "ingredient_tp": 18,
+            "invalid_outputs": 2,
+            "joint_correct_cases": 7,
+            "product_requests": 19,
+            "supported_comparison_cases": 9,
+            "unique_ndc_target_requests": 16,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 8
+          },
+          "valid_output_rate": {
+            "numerator": 8,
+            "denominator": 10,
+            "value": 0.8
+          },
+          "joint_case_accuracy": {
+            "numerator": 7,
+            "denominator": 10,
+            "value": 0.7
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 16,
+            "denominator": 18,
+            "value": 0.8888888888888888
+          },
+          "comparison_accuracy": {
+            "numerator": 8,
+            "denominator": 9,
+            "value": 0.8888888888888888
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 1,
+            "value": 0.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 14,
+            "denominator": 16,
+            "value": 0.875
+          },
+          "full_formulation_accuracy": {
+            "numerator": 4,
+            "denominator": 6,
+            "value": 0.6666666666666666
+          },
+          "ingredient_precision": {
+            "numerator": 18,
+            "denominator": 18,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 18,
+            "denominator": 20,
+            "value": 0.9
+          },
+          "ingredient_f1": {
+            "numerator": 36,
+            "denominator": 38,
+            "value": 0.9473684210526315
+          },
+          "family_groups": 7
+        },
+        "other_oral_otc": {
+          "counts": {
+            "abstention_target_requests": 4,
+            "cases": 41,
+            "correct_abstentions": 0,
+            "correct_comparisons": 36,
+            "correct_full_formulation": 40,
+            "correct_statuses": 72,
+            "correct_unique_ndc": 67,
+            "full_formulation_target_requests": 42,
+            "ingredient_fn": 2,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 72,
+            "ingredient_target_requests": 74,
+            "ingredient_tp": 91,
+            "invalid_outputs": 5,
+            "joint_correct_cases": 36,
+            "product_requests": 78,
+            "supported_comparison_cases": 37,
+            "unique_ndc_target_requests": 69,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 36
+          },
+          "valid_output_rate": {
+            "numerator": 36,
+            "denominator": 41,
+            "value": 0.8780487804878049
+          },
+          "joint_case_accuracy": {
+            "numerator": 36,
+            "denominator": 41,
+            "value": 0.8780487804878049
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 72,
+            "denominator": 74,
+            "value": 0.972972972972973
+          },
+          "comparison_accuracy": {
+            "numerator": 36,
+            "denominator": 37,
+            "value": 0.972972972972973
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 4,
+            "value": 0.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 67,
+            "denominator": 69,
+            "value": 0.9710144927536232
+          },
+          "full_formulation_accuracy": {
+            "numerator": 40,
+            "denominator": 42,
+            "value": 0.9523809523809523
+          },
+          "ingredient_precision": {
+            "numerator": 91,
+            "denominator": 91,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 91,
+            "denominator": 93,
+            "value": 0.978494623655914
+          },
+          "ingredient_f1": {
+            "numerator": 182,
+            "denominator": 184,
+            "value": 0.9891304347826086
+          },
+          "family_groups": 22
+        },
+        "sunscreen": {
+          "counts": {
+            "abstention_target_requests": 5,
+            "cases": 56,
+            "correct_abstentions": 0,
+            "correct_comparisons": 51,
+            "correct_full_formulation": 3,
+            "correct_statuses": 97,
+            "correct_unique_ndc": 97,
+            "full_formulation_target_requests": 3,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 102,
+            "ingredient_target_requests": 102,
+            "ingredient_tp": 266,
+            "invalid_outputs": 5,
+            "joint_correct_cases": 48,
+            "product_requests": 107,
+            "supported_comparison_cases": 51,
+            "unique_ndc_target_requests": 97,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 51
+          },
+          "valid_output_rate": {
+            "numerator": 51,
+            "denominator": 56,
+            "value": 0.9107142857142857
+          },
+          "joint_case_accuracy": {
+            "numerator": 48,
+            "denominator": 56,
+            "value": 0.8571428571428571
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 102,
+            "denominator": 102,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 51,
+            "denominator": 51,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 5,
+            "value": 0.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 97,
+            "denominator": 97,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 266,
+            "denominator": 266,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 266,
+            "denominator": 266,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 532,
+            "denominator": 532,
+            "value": 1.0
+          },
+          "family_groups": 46
+        },
+        "topical_otc": {
+          "counts": {
+            "abstention_target_requests": 8,
+            "cases": 57,
+            "correct_abstentions": 0,
+            "correct_comparisons": 47,
+            "correct_full_formulation": 29,
+            "correct_statuses": 91,
+            "correct_unique_ndc": 87,
+            "full_formulation_target_requests": 31,
+            "ingredient_fn": 4,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 94,
+            "ingredient_target_requests": 98,
+            "ingredient_tp": 100,
+            "invalid_outputs": 10,
+            "joint_correct_cases": 44,
+            "product_requests": 106,
+            "supported_comparison_cases": 49,
+            "unique_ndc_target_requests": 91,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 47
+          },
+          "valid_output_rate": {
+            "numerator": 47,
+            "denominator": 57,
+            "value": 0.8245614035087719
+          },
+          "joint_case_accuracy": {
+            "numerator": 44,
+            "denominator": 57,
+            "value": 0.7719298245614035
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 94,
+            "denominator": 98,
+            "value": 0.9591836734693877
+          },
+          "comparison_accuracy": {
+            "numerator": 47,
+            "denominator": 49,
+            "value": 0.9591836734693877
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 8,
+            "value": 0.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 87,
+            "denominator": 91,
+            "value": 0.9560439560439561
+          },
+          "full_formulation_accuracy": {
+            "numerator": 29,
+            "denominator": 31,
+            "value": 0.9354838709677419
+          },
+          "ingredient_precision": {
+            "numerator": 100,
+            "denominator": 100,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 100,
+            "denominator": 104,
+            "value": 0.9615384615384616
+          },
+          "ingredient_f1": {
+            "numerator": 200,
+            "denominator": 204,
+            "value": 0.9803921568627451
+          },
+          "family_groups": 44
+        }
+      },
+      "interpretation": "All fixed eligible targets stay in denominators, including invalid/missing outputs. These are source-reviewed challenge metrics, not clinical truth.",
+      "scoring_contract_version": "challenge_v1_scoring_contract_3",
+      "benchmark_contract_version": "challenge_v1_contract_2",
+      "by_reference_provenance": {
+        "source_consistency_only": {
+          "overall": {
+            "counts": {
+              "abstention_target_requests": 22,
+              "cases": 230,
+              "correct_abstentions": 0,
+              "correct_comparisons": 196,
+              "correct_full_formulation": 127,
+              "correct_statuses": 389,
+              "correct_unique_ndc": 372,
+              "full_formulation_target_requests": 134,
+              "ingredient_fn": 10,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 400,
+              "ingredient_target_requests": 409,
+              "ingredient_tp": 656,
+              "invalid_outputs": 27,
+              "joint_correct_cases": 194,
+              "product_requests": 431,
+              "supported_comparison_cases": 201,
+              "unique_ndc_target_requests": 381,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 203
+            },
+            "valid_output_rate": {
+              "numerator": 203,
+              "denominator": 230,
+              "value": 0.8826086956521739
+            },
+            "joint_case_accuracy": {
+              "numerator": 194,
+              "denominator": 230,
+              "value": 0.8434782608695652
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 400,
+              "denominator": 409,
+              "value": 0.9779951100244498
+            },
+            "comparison_accuracy": {
+              "numerator": 196,
+              "denominator": 201,
+              "value": 0.9751243781094527
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 22,
+              "value": 0.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 372,
+              "denominator": 381,
+              "value": 0.9763779527559056
+            },
+            "full_formulation_accuracy": {
+              "numerator": 127,
+              "denominator": 134,
+              "value": 0.9477611940298507
+            },
+            "ingredient_precision": {
+              "numerator": 656,
+              "denominator": 656,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 656,
+              "denominator": 666,
+              "value": 0.984984984984985
+            },
+            "ingredient_f1": {
+              "numerator": 1312,
+              "denominator": 1322,
+              "value": 0.9924357034795764
+            },
+            "family_groups": 153
+          },
+          "by_role": {
+            "ambiguity": {
+              "counts": {
+                "abstention_target_requests": 22,
+                "cases": 22,
+                "correct_abstentions": 0,
+                "correct_statuses": 0,
+                "invalid_outputs": 22,
+                "joint_correct_cases": 0,
+                "product_requests": 22
+              },
+              "valid_output_rate": {
+                "numerator": 0,
+                "denominator": 22,
+                "value": 0.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 0,
+                "denominator": 22,
+                "value": 0.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "comparison_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 22,
+                "value": 0.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "full_formulation_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "ingredient_precision": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "ingredient_recall": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "ingredient_f1": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "family_groups": 21
+            },
+            "different_with_ndc": {
+              "counts": {
+                "cases": 86,
+                "correct_comparisons": 85,
+                "correct_full_formulation": 26,
+                "correct_statuses": 172,
+                "correct_unique_ndc": 170,
+                "full_formulation_target_requests": 26,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 172,
+                "ingredient_target_requests": 172,
+                "ingredient_tp": 304,
+                "joint_correct_cases": 85,
+                "product_requests": 172,
+                "supported_comparison_cases": 86,
+                "unique_ndc_target_requests": 170,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 86
+              },
+              "valid_output_rate": {
+                "numerator": 86,
+                "denominator": 86,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 85,
+                "denominator": 86,
+                "value": 0.9883720930232558
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 172,
+                "denominator": 172,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 85,
+                "denominator": 86,
+                "value": 0.9883720930232558
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 170,
+                "denominator": 170,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 26,
+                "denominator": 26,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 304,
+                "denominator": 304,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 304,
+                "denominator": 304,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 608,
+                "denominator": 608,
+                "value": 1.0
+              },
+              "family_groups": 48
+            },
+            "different_without_ndc": {
+              "counts": {
+                "cases": 34,
+                "correct_comparisons": 34,
+                "correct_full_formulation": 23,
+                "correct_statuses": 67,
+                "correct_unique_ndc": 65,
+                "full_formulation_target_requests": 23,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 68,
+                "ingredient_target_requests": 68,
+                "ingredient_tp": 110,
+                "joint_correct_cases": 33,
+                "product_requests": 68,
+                "supported_comparison_cases": 34,
+                "unique_ndc_target_requests": 65,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 34
+              },
+              "valid_output_rate": {
+                "numerator": 34,
+                "denominator": 34,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 33,
+                "denominator": 34,
+                "value": 0.9705882352941176
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 68,
+                "denominator": 68,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 34,
+                "denominator": 34,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 65,
+                "denominator": 65,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 23,
+                "denominator": 23,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 110,
+                "denominator": 110,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 110,
+                "denominator": 110,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 220,
+                "denominator": 220,
+                "value": 1.0
+              },
+              "family_groups": 17
+            },
+            "same_ingredient_control": {
+              "counts": {
+                "cases": 80,
+                "correct_comparisons": 76,
+                "correct_full_formulation": 71,
+                "correct_statuses": 142,
+                "correct_unique_ndc": 129,
+                "full_formulation_target_requests": 77,
+                "ingredient_fn": 8,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 152,
+                "ingredient_target_requests": 160,
+                "ingredient_tp": 230,
+                "invalid_outputs": 4,
+                "joint_correct_cases": 69,
+                "product_requests": 160,
+                "supported_comparison_cases": 80,
+                "unique_ndc_target_requests": 137,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 76
+              },
+              "valid_output_rate": {
+                "numerator": 76,
+                "denominator": 80,
+                "value": 0.95
+              },
+              "joint_case_accuracy": {
+                "numerator": 69,
+                "denominator": 80,
+                "value": 0.8625
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 152,
+                "denominator": 160,
+                "value": 0.95
+              },
+              "comparison_accuracy": {
+                "numerator": 76,
+                "denominator": 80,
+                "value": 0.95
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 129,
+                "denominator": 137,
+                "value": 0.9416058394160584
+              },
+              "full_formulation_accuracy": {
+                "numerator": 71,
+                "denominator": 77,
+                "value": 0.922077922077922
+              },
+              "ingredient_precision": {
+                "numerator": 230,
+                "denominator": 230,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 230,
+                "denominator": 238,
+                "value": 0.9663865546218487
+              },
+              "ingredient_f1": {
+                "numerator": 460,
+                "denominator": 468,
+                "value": 0.9829059829059829
+              },
+              "family_groups": 82
+            },
+            "supplementary": {
+              "counts": {
+                "cases": 8,
+                "correct_comparisons": 1,
+                "correct_full_formulation": 7,
+                "correct_statuses": 8,
+                "correct_unique_ndc": 8,
+                "full_formulation_target_requests": 8,
+                "ingredient_fn": 2,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 8,
+                "ingredient_target_requests": 9,
+                "ingredient_tp": 12,
+                "invalid_outputs": 1,
+                "joint_correct_cases": 7,
+                "product_requests": 9,
+                "supported_comparison_cases": 1,
+                "unique_ndc_target_requests": 9,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 7
+              },
+              "valid_output_rate": {
+                "numerator": 7,
+                "denominator": 8,
+                "value": 0.875
+              },
+              "joint_case_accuracy": {
+                "numerator": 7,
+                "denominator": 8,
+                "value": 0.875
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 8,
+                "denominator": 9,
+                "value": 0.8888888888888888
+              },
+              "comparison_accuracy": {
+                "numerator": 1,
+                "denominator": 1,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 8,
+                "denominator": 9,
+                "value": 0.8888888888888888
+              },
+              "full_formulation_accuracy": {
+                "numerator": 7,
+                "denominator": 8,
+                "value": 0.875
+              },
+              "ingredient_precision": {
+                "numerator": 12,
+                "denominator": 12,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 12,
+                "denominator": 14,
+                "value": 0.8571428571428571
+              },
+              "ingredient_f1": {
+                "numerator": 24,
+                "denominator": 26,
+                "value": 0.9230769230769231
+              },
+              "family_groups": 8
+            }
+          },
+          "by_category": {
+            "conventional_oral_analgesic_cold_allergy": {
+              "counts": {
+                "abstention_target_requests": 1,
+                "cases": 29,
+                "correct_abstentions": 0,
+                "correct_comparisons": 21,
+                "correct_full_formulation": 39,
+                "correct_statuses": 47,
+                "correct_unique_ndc": 39,
+                "full_formulation_target_requests": 40,
+                "ingredient_fn": 2,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 48,
+                "ingredient_target_requests": 49,
+                "ingredient_tp": 74,
+                "invalid_outputs": 2,
+                "joint_correct_cases": 26,
+                "product_requests": 50,
+                "supported_comparison_cases": 21,
+                "unique_ndc_target_requests": 40,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 27
+              },
+              "valid_output_rate": {
+                "numerator": 27,
+                "denominator": 29,
+                "value": 0.9310344827586207
+              },
+              "joint_case_accuracy": {
+                "numerator": 26,
+                "denominator": 29,
+                "value": 0.896551724137931
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 48,
+                "denominator": 49,
+                "value": 0.9795918367346939
+              },
+              "comparison_accuracy": {
+                "numerator": 21,
+                "denominator": 21,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 1,
+                "value": 0.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 39,
+                "denominator": 40,
+                "value": 0.975
+              },
+              "full_formulation_accuracy": {
+                "numerator": 39,
+                "denominator": 40,
+                "value": 0.975
+              },
+              "ingredient_precision": {
+                "numerator": 74,
+                "denominator": 74,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 74,
+                "denominator": 76,
+                "value": 0.9736842105263158
+              },
+              "ingredient_f1": {
+                "numerator": 148,
+                "denominator": 150,
+                "value": 0.9866666666666667
+              },
+              "family_groups": 21
+            },
+            "dental_otc": {
+              "counts": {
+                "cases": 7,
+                "correct_comparisons": 7,
+                "correct_statuses": 14,
+                "correct_unique_ndc": 14,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 14,
+                "ingredient_target_requests": 14,
+                "ingredient_tp": 16,
+                "joint_correct_cases": 7,
+                "product_requests": 14,
+                "supported_comparison_cases": 7,
+                "unique_ndc_target_requests": 14,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 7
+              },
+              "valid_output_rate": {
+                "numerator": 7,
+                "denominator": 7,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 7,
+                "denominator": 7,
+                "value": 1.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 14,
+                "denominator": 14,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 7,
+                "denominator": 7,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 14,
+                "denominator": 14,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "ingredient_precision": {
+                "numerator": 16,
+                "denominator": 16,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 16,
+                "denominator": 16,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 32,
+                "denominator": 32,
+                "value": 1.0
+              },
+              "family_groups": 5
+            },
+            "mixed_categories": {
+              "counts": {
+                "abstention_target_requests": 3,
+                "cases": 30,
+                "correct_abstentions": 0,
+                "correct_comparisons": 26,
+                "correct_full_formulation": 12,
+                "correct_statuses": 54,
+                "correct_unique_ndc": 54,
+                "full_formulation_target_requests": 12,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 54,
+                "ingredient_target_requests": 54,
+                "ingredient_tp": 91,
+                "invalid_outputs": 3,
+                "joint_correct_cases": 26,
+                "product_requests": 57,
+                "supported_comparison_cases": 27,
+                "unique_ndc_target_requests": 54,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 27
+              },
+              "valid_output_rate": {
+                "numerator": 27,
+                "denominator": 30,
+                "value": 0.9
+              },
+              "joint_case_accuracy": {
+                "numerator": 26,
+                "denominator": 30,
+                "value": 0.8666666666666667
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 54,
+                "denominator": 54,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 26,
+                "denominator": 27,
+                "value": 0.9629629629629629
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 3,
+                "value": 0.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 54,
+                "denominator": 54,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 12,
+                "denominator": 12,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 91,
+                "denominator": 91,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 91,
+                "denominator": 91,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 182,
+                "denominator": 182,
+                "value": 1.0
+              },
+              "family_groups": 13
+            },
+            "other_or_unclassified_otc": {
+              "counts": {
+                "abstention_target_requests": 1,
+                "cases": 10,
+                "correct_abstentions": 0,
+                "correct_comparisons": 8,
+                "correct_full_formulation": 4,
+                "correct_statuses": 14,
+                "correct_unique_ndc": 14,
+                "full_formulation_target_requests": 6,
+                "ingredient_fn": 2,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 16,
+                "ingredient_target_requests": 18,
+                "ingredient_tp": 18,
+                "invalid_outputs": 2,
+                "joint_correct_cases": 7,
+                "product_requests": 19,
+                "supported_comparison_cases": 9,
+                "unique_ndc_target_requests": 16,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 8
+              },
+              "valid_output_rate": {
+                "numerator": 8,
+                "denominator": 10,
+                "value": 0.8
+              },
+              "joint_case_accuracy": {
+                "numerator": 7,
+                "denominator": 10,
+                "value": 0.7
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 16,
+                "denominator": 18,
+                "value": 0.8888888888888888
+              },
+              "comparison_accuracy": {
+                "numerator": 8,
+                "denominator": 9,
+                "value": 0.8888888888888888
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 1,
+                "value": 0.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 14,
+                "denominator": 16,
+                "value": 0.875
+              },
+              "full_formulation_accuracy": {
+                "numerator": 4,
+                "denominator": 6,
+                "value": 0.6666666666666666
+              },
+              "ingredient_precision": {
+                "numerator": 18,
+                "denominator": 18,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 18,
+                "denominator": 20,
+                "value": 0.9
+              },
+              "ingredient_f1": {
+                "numerator": 36,
+                "denominator": 38,
+                "value": 0.9473684210526315
+              },
+              "family_groups": 7
+            },
+            "other_oral_otc": {
+              "counts": {
+                "abstention_target_requests": 4,
+                "cases": 41,
+                "correct_abstentions": 0,
+                "correct_comparisons": 36,
+                "correct_full_formulation": 40,
+                "correct_statuses": 72,
+                "correct_unique_ndc": 67,
+                "full_formulation_target_requests": 42,
+                "ingredient_fn": 2,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 72,
+                "ingredient_target_requests": 74,
+                "ingredient_tp": 91,
+                "invalid_outputs": 5,
+                "joint_correct_cases": 36,
+                "product_requests": 78,
+                "supported_comparison_cases": 37,
+                "unique_ndc_target_requests": 69,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 36
+              },
+              "valid_output_rate": {
+                "numerator": 36,
+                "denominator": 41,
+                "value": 0.8780487804878049
+              },
+              "joint_case_accuracy": {
+                "numerator": 36,
+                "denominator": 41,
+                "value": 0.8780487804878049
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 72,
+                "denominator": 74,
+                "value": 0.972972972972973
+              },
+              "comparison_accuracy": {
+                "numerator": 36,
+                "denominator": 37,
+                "value": 0.972972972972973
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 4,
+                "value": 0.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 67,
+                "denominator": 69,
+                "value": 0.9710144927536232
+              },
+              "full_formulation_accuracy": {
+                "numerator": 40,
+                "denominator": 42,
+                "value": 0.9523809523809523
+              },
+              "ingredient_precision": {
+                "numerator": 91,
+                "denominator": 91,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 91,
+                "denominator": 93,
+                "value": 0.978494623655914
+              },
+              "ingredient_f1": {
+                "numerator": 182,
+                "denominator": 184,
+                "value": 0.9891304347826086
+              },
+              "family_groups": 22
+            },
+            "sunscreen": {
+              "counts": {
+                "abstention_target_requests": 5,
+                "cases": 56,
+                "correct_abstentions": 0,
+                "correct_comparisons": 51,
+                "correct_full_formulation": 3,
+                "correct_statuses": 97,
+                "correct_unique_ndc": 97,
+                "full_formulation_target_requests": 3,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 102,
+                "ingredient_target_requests": 102,
+                "ingredient_tp": 266,
+                "invalid_outputs": 5,
+                "joint_correct_cases": 48,
+                "product_requests": 107,
+                "supported_comparison_cases": 51,
+                "unique_ndc_target_requests": 97,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 51
+              },
+              "valid_output_rate": {
+                "numerator": 51,
+                "denominator": 56,
+                "value": 0.9107142857142857
+              },
+              "joint_case_accuracy": {
+                "numerator": 48,
+                "denominator": 56,
+                "value": 0.8571428571428571
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 102,
+                "denominator": 102,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 51,
+                "denominator": 51,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 5,
+                "value": 0.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 97,
+                "denominator": 97,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 3,
+                "denominator": 3,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 266,
+                "denominator": 266,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 266,
+                "denominator": 266,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 532,
+                "denominator": 532,
+                "value": 1.0
+              },
+              "family_groups": 46
+            },
+            "topical_otc": {
+              "counts": {
+                "abstention_target_requests": 8,
+                "cases": 57,
+                "correct_abstentions": 0,
+                "correct_comparisons": 47,
+                "correct_full_formulation": 29,
+                "correct_statuses": 91,
+                "correct_unique_ndc": 87,
+                "full_formulation_target_requests": 31,
+                "ingredient_fn": 4,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 94,
+                "ingredient_target_requests": 98,
+                "ingredient_tp": 100,
+                "invalid_outputs": 10,
+                "joint_correct_cases": 44,
+                "product_requests": 106,
+                "supported_comparison_cases": 49,
+                "unique_ndc_target_requests": 91,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 47
+              },
+              "valid_output_rate": {
+                "numerator": 47,
+                "denominator": 57,
+                "value": 0.8245614035087719
+              },
+              "joint_case_accuracy": {
+                "numerator": 44,
+                "denominator": 57,
+                "value": 0.7719298245614035
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 94,
+                "denominator": 98,
+                "value": 0.9591836734693877
+              },
+              "comparison_accuracy": {
+                "numerator": 47,
+                "denominator": 49,
+                "value": 0.9591836734693877
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 8,
+                "value": 0.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 87,
+                "denominator": 91,
+                "value": 0.9560439560439561
+              },
+              "full_formulation_accuracy": {
+                "numerator": 29,
+                "denominator": 31,
+                "value": 0.9354838709677419
+              },
+              "ingredient_precision": {
+                "numerator": 100,
+                "denominator": 100,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 100,
+                "denominator": 104,
+                "value": 0.9615384615384616
+              },
+              "ingredient_f1": {
+                "numerator": 200,
+                "denominator": 204,
+                "value": 0.9803921568627451
+              },
+              "family_groups": 44
+            }
+          },
+          "interpretation": "All fixed eligible targets stay in denominators, including invalid/missing outputs. These are source-reviewed challenge metrics, not clinical truth.",
+          "scoring_contract_version": "challenge_v1_scoring_contract_3",
+          "benchmark_contract_version": "challenge_v1_contract_2"
+        },
+        "independently_audited": {
+          "overall": {
+            "counts": {},
+            "valid_output_rate": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "joint_case_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "comparison_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "full_formulation_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_f1": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "family_groups": 0
+          },
+          "by_role": {},
+          "by_category": {},
+          "interpretation": "All fixed eligible targets stay in denominators, including invalid/missing outputs. These are source-reviewed challenge metrics, not clinical truth.",
+          "scoring_contract_version": "challenge_v1_scoring_contract_3",
+          "benchmark_contract_version": "challenge_v1_contract_2"
+        }
+      },
+      "core_excluding_supplementary": {
+        "overall": {
+          "counts": {
+            "abstention_target_requests": 22,
+            "cases": 222,
+            "correct_abstentions": 0,
+            "correct_comparisons": 195,
+            "correct_full_formulation": 120,
+            "correct_statuses": 381,
+            "correct_unique_ndc": 364,
+            "full_formulation_target_requests": 126,
+            "ingredient_fn": 8,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 392,
+            "ingredient_target_requests": 400,
+            "ingredient_tp": 644,
+            "invalid_outputs": 26,
+            "joint_correct_cases": 187,
+            "product_requests": 422,
+            "supported_comparison_cases": 200,
+            "unique_ndc_target_requests": 372,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 196
+          },
+          "valid_output_rate": {
+            "numerator": 196,
+            "denominator": 222,
+            "value": 0.8828828828828829
+          },
+          "joint_case_accuracy": {
+            "numerator": 187,
+            "denominator": 222,
+            "value": 0.8423423423423423
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 392,
+            "denominator": 400,
+            "value": 0.98
+          },
+          "comparison_accuracy": {
+            "numerator": 195,
+            "denominator": 200,
+            "value": 0.975
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 22,
+            "value": 0.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 364,
+            "denominator": 372,
+            "value": 0.978494623655914
+          },
+          "full_formulation_accuracy": {
+            "numerator": 120,
+            "denominator": 126,
+            "value": 0.9523809523809523
+          },
+          "ingredient_precision": {
+            "numerator": 644,
+            "denominator": 644,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 644,
+            "denominator": 652,
+            "value": 0.9877300613496932
+          },
+          "ingredient_f1": {
+            "numerator": 1288,
+            "denominator": 1296,
+            "value": 0.9938271604938271
+          },
+          "family_groups": 147
+        },
+        "by_role": {
+          "ambiguity": {
+            "counts": {
+              "abstention_target_requests": 22,
+              "cases": 22,
+              "correct_abstentions": 0,
+              "correct_statuses": 0,
+              "invalid_outputs": 22,
+              "joint_correct_cases": 0,
+              "product_requests": 22
+            },
+            "valid_output_rate": {
+              "numerator": 0,
+              "denominator": 22,
+              "value": 0.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 0,
+              "denominator": 22,
+              "value": 0.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "comparison_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 22,
+              "value": 0.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "full_formulation_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_f1": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "family_groups": 21
+          },
+          "different_with_ndc": {
+            "counts": {
+              "cases": 86,
+              "correct_comparisons": 85,
+              "correct_full_formulation": 26,
+              "correct_statuses": 172,
+              "correct_unique_ndc": 170,
+              "full_formulation_target_requests": 26,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 172,
+              "ingredient_target_requests": 172,
+              "ingredient_tp": 304,
+              "joint_correct_cases": 85,
+              "product_requests": 172,
+              "supported_comparison_cases": 86,
+              "unique_ndc_target_requests": 170,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 86
+            },
+            "valid_output_rate": {
+              "numerator": 86,
+              "denominator": 86,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 85,
+              "denominator": 86,
+              "value": 0.9883720930232558
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 172,
+              "denominator": 172,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 85,
+              "denominator": 86,
+              "value": 0.9883720930232558
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 170,
+              "denominator": 170,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 26,
+              "denominator": 26,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 304,
+              "denominator": 304,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 304,
+              "denominator": 304,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 608,
+              "denominator": 608,
+              "value": 1.0
+            },
+            "family_groups": 48
+          },
+          "different_without_ndc": {
+            "counts": {
+              "cases": 34,
+              "correct_comparisons": 34,
+              "correct_full_formulation": 23,
+              "correct_statuses": 67,
+              "correct_unique_ndc": 65,
+              "full_formulation_target_requests": 23,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 68,
+              "ingredient_target_requests": 68,
+              "ingredient_tp": 110,
+              "joint_correct_cases": 33,
+              "product_requests": 68,
+              "supported_comparison_cases": 34,
+              "unique_ndc_target_requests": 65,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 34
+            },
+            "valid_output_rate": {
+              "numerator": 34,
+              "denominator": 34,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 33,
+              "denominator": 34,
+              "value": 0.9705882352941176
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 68,
+              "denominator": 68,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 34,
+              "denominator": 34,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 65,
+              "denominator": 65,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 23,
+              "denominator": 23,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 110,
+              "denominator": 110,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 110,
+              "denominator": 110,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 220,
+              "denominator": 220,
+              "value": 1.0
+            },
+            "family_groups": 17
+          },
+          "same_ingredient_control": {
+            "counts": {
+              "cases": 80,
+              "correct_comparisons": 76,
+              "correct_full_formulation": 71,
+              "correct_statuses": 142,
+              "correct_unique_ndc": 129,
+              "full_formulation_target_requests": 77,
+              "ingredient_fn": 8,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 152,
+              "ingredient_target_requests": 160,
+              "ingredient_tp": 230,
+              "invalid_outputs": 4,
+              "joint_correct_cases": 69,
+              "product_requests": 160,
+              "supported_comparison_cases": 80,
+              "unique_ndc_target_requests": 137,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 76
+            },
+            "valid_output_rate": {
+              "numerator": 76,
+              "denominator": 80,
+              "value": 0.95
+            },
+            "joint_case_accuracy": {
+              "numerator": 69,
+              "denominator": 80,
+              "value": 0.8625
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 152,
+              "denominator": 160,
+              "value": 0.95
+            },
+            "comparison_accuracy": {
+              "numerator": 76,
+              "denominator": 80,
+              "value": 0.95
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 129,
+              "denominator": 137,
+              "value": 0.9416058394160584
+            },
+            "full_formulation_accuracy": {
+              "numerator": 71,
+              "denominator": 77,
+              "value": 0.922077922077922
+            },
+            "ingredient_precision": {
+              "numerator": 230,
+              "denominator": 230,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 230,
+              "denominator": 238,
+              "value": 0.9663865546218487
+            },
+            "ingredient_f1": {
+              "numerator": 460,
+              "denominator": 468,
+              "value": 0.9829059829059829
+            },
+            "family_groups": 82
+          }
+        },
+        "by_category": {
+          "conventional_oral_analgesic_cold_allergy": {
+            "counts": {
+              "abstention_target_requests": 1,
+              "cases": 21,
+              "correct_abstentions": 0,
+              "correct_comparisons": 20,
+              "correct_full_formulation": 32,
+              "correct_statuses": 39,
+              "correct_unique_ndc": 31,
+              "full_formulation_target_requests": 32,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 40,
+              "ingredient_target_requests": 40,
+              "ingredient_tp": 62,
+              "invalid_outputs": 1,
+              "joint_correct_cases": 19,
+              "product_requests": 41,
+              "supported_comparison_cases": 20,
+              "unique_ndc_target_requests": 31,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 20
+            },
+            "valid_output_rate": {
+              "numerator": 20,
+              "denominator": 21,
+              "value": 0.9523809523809523
+            },
+            "joint_case_accuracy": {
+              "numerator": 19,
+              "denominator": 21,
+              "value": 0.9047619047619048
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 40,
+              "denominator": 40,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 20,
+              "denominator": 20,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 1,
+              "value": 0.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 31,
+              "denominator": 31,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 32,
+              "denominator": 32,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 62,
+              "denominator": 62,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 62,
+              "denominator": 62,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 124,
+              "denominator": 124,
+              "value": 1.0
+            },
+            "family_groups": 15
+          },
+          "dental_otc": {
+            "counts": {
+              "cases": 7,
+              "correct_comparisons": 7,
+              "correct_statuses": 14,
+              "correct_unique_ndc": 14,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 14,
+              "ingredient_target_requests": 14,
+              "ingredient_tp": 16,
+              "joint_correct_cases": 7,
+              "product_requests": 14,
+              "supported_comparison_cases": 7,
+              "unique_ndc_target_requests": 14,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 7
+            },
+            "valid_output_rate": {
+              "numerator": 7,
+              "denominator": 7,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 7,
+              "denominator": 7,
+              "value": 1.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 14,
+              "denominator": 14,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 7,
+              "denominator": 7,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 14,
+              "denominator": 14,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_precision": {
+              "numerator": 16,
+              "denominator": 16,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 16,
+              "denominator": 16,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 32,
+              "denominator": 32,
+              "value": 1.0
+            },
+            "family_groups": 5
+          },
+          "mixed_categories": {
+            "counts": {
+              "abstention_target_requests": 3,
+              "cases": 30,
+              "correct_abstentions": 0,
+              "correct_comparisons": 26,
+              "correct_full_formulation": 12,
+              "correct_statuses": 54,
+              "correct_unique_ndc": 54,
+              "full_formulation_target_requests": 12,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 54,
+              "ingredient_target_requests": 54,
+              "ingredient_tp": 91,
+              "invalid_outputs": 3,
+              "joint_correct_cases": 26,
+              "product_requests": 57,
+              "supported_comparison_cases": 27,
+              "unique_ndc_target_requests": 54,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 27
+            },
+            "valid_output_rate": {
+              "numerator": 27,
+              "denominator": 30,
+              "value": 0.9
+            },
+            "joint_case_accuracy": {
+              "numerator": 26,
+              "denominator": 30,
+              "value": 0.8666666666666667
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 54,
+              "denominator": 54,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 26,
+              "denominator": 27,
+              "value": 0.9629629629629629
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 3,
+              "value": 0.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 54,
+              "denominator": 54,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 12,
+              "denominator": 12,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 91,
+              "denominator": 91,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 91,
+              "denominator": 91,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 182,
+              "denominator": 182,
+              "value": 1.0
+            },
+            "family_groups": 13
+          },
+          "other_or_unclassified_otc": {
+            "counts": {
+              "abstention_target_requests": 1,
+              "cases": 10,
+              "correct_abstentions": 0,
+              "correct_comparisons": 8,
+              "correct_full_formulation": 4,
+              "correct_statuses": 14,
+              "correct_unique_ndc": 14,
+              "full_formulation_target_requests": 6,
+              "ingredient_fn": 2,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 16,
+              "ingredient_target_requests": 18,
+              "ingredient_tp": 18,
+              "invalid_outputs": 2,
+              "joint_correct_cases": 7,
+              "product_requests": 19,
+              "supported_comparison_cases": 9,
+              "unique_ndc_target_requests": 16,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 8
+            },
+            "valid_output_rate": {
+              "numerator": 8,
+              "denominator": 10,
+              "value": 0.8
+            },
+            "joint_case_accuracy": {
+              "numerator": 7,
+              "denominator": 10,
+              "value": 0.7
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 16,
+              "denominator": 18,
+              "value": 0.8888888888888888
+            },
+            "comparison_accuracy": {
+              "numerator": 8,
+              "denominator": 9,
+              "value": 0.8888888888888888
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 1,
+              "value": 0.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 14,
+              "denominator": 16,
+              "value": 0.875
+            },
+            "full_formulation_accuracy": {
+              "numerator": 4,
+              "denominator": 6,
+              "value": 0.6666666666666666
+            },
+            "ingredient_precision": {
+              "numerator": 18,
+              "denominator": 18,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 18,
+              "denominator": 20,
+              "value": 0.9
+            },
+            "ingredient_f1": {
+              "numerator": 36,
+              "denominator": 38,
+              "value": 0.9473684210526315
+            },
+            "family_groups": 7
+          },
+          "other_oral_otc": {
+            "counts": {
+              "abstention_target_requests": 4,
+              "cases": 41,
+              "correct_abstentions": 0,
+              "correct_comparisons": 36,
+              "correct_full_formulation": 40,
+              "correct_statuses": 72,
+              "correct_unique_ndc": 67,
+              "full_formulation_target_requests": 42,
+              "ingredient_fn": 2,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 72,
+              "ingredient_target_requests": 74,
+              "ingredient_tp": 91,
+              "invalid_outputs": 5,
+              "joint_correct_cases": 36,
+              "product_requests": 78,
+              "supported_comparison_cases": 37,
+              "unique_ndc_target_requests": 69,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 36
+            },
+            "valid_output_rate": {
+              "numerator": 36,
+              "denominator": 41,
+              "value": 0.8780487804878049
+            },
+            "joint_case_accuracy": {
+              "numerator": 36,
+              "denominator": 41,
+              "value": 0.8780487804878049
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 72,
+              "denominator": 74,
+              "value": 0.972972972972973
+            },
+            "comparison_accuracy": {
+              "numerator": 36,
+              "denominator": 37,
+              "value": 0.972972972972973
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 4,
+              "value": 0.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 67,
+              "denominator": 69,
+              "value": 0.9710144927536232
+            },
+            "full_formulation_accuracy": {
+              "numerator": 40,
+              "denominator": 42,
+              "value": 0.9523809523809523
+            },
+            "ingredient_precision": {
+              "numerator": 91,
+              "denominator": 91,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 91,
+              "denominator": 93,
+              "value": 0.978494623655914
+            },
+            "ingredient_f1": {
+              "numerator": 182,
+              "denominator": 184,
+              "value": 0.9891304347826086
+            },
+            "family_groups": 22
+          },
+          "sunscreen": {
+            "counts": {
+              "abstention_target_requests": 5,
+              "cases": 56,
+              "correct_abstentions": 0,
+              "correct_comparisons": 51,
+              "correct_full_formulation": 3,
+              "correct_statuses": 97,
+              "correct_unique_ndc": 97,
+              "full_formulation_target_requests": 3,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 102,
+              "ingredient_target_requests": 102,
+              "ingredient_tp": 266,
+              "invalid_outputs": 5,
+              "joint_correct_cases": 48,
+              "product_requests": 107,
+              "supported_comparison_cases": 51,
+              "unique_ndc_target_requests": 97,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 51
+            },
+            "valid_output_rate": {
+              "numerator": 51,
+              "denominator": 56,
+              "value": 0.9107142857142857
+            },
+            "joint_case_accuracy": {
+              "numerator": 48,
+              "denominator": 56,
+              "value": 0.8571428571428571
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 102,
+              "denominator": 102,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 51,
+              "denominator": 51,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 5,
+              "value": 0.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 97,
+              "denominator": 97,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 3,
+              "denominator": 3,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 266,
+              "denominator": 266,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 266,
+              "denominator": 266,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 532,
+              "denominator": 532,
+              "value": 1.0
+            },
+            "family_groups": 46
+          },
+          "topical_otc": {
+            "counts": {
+              "abstention_target_requests": 8,
+              "cases": 57,
+              "correct_abstentions": 0,
+              "correct_comparisons": 47,
+              "correct_full_formulation": 29,
+              "correct_statuses": 91,
+              "correct_unique_ndc": 87,
+              "full_formulation_target_requests": 31,
+              "ingredient_fn": 4,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 94,
+              "ingredient_target_requests": 98,
+              "ingredient_tp": 100,
+              "invalid_outputs": 10,
+              "joint_correct_cases": 44,
+              "product_requests": 106,
+              "supported_comparison_cases": 49,
+              "unique_ndc_target_requests": 91,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 47
+            },
+            "valid_output_rate": {
+              "numerator": 47,
+              "denominator": 57,
+              "value": 0.8245614035087719
+            },
+            "joint_case_accuracy": {
+              "numerator": 44,
+              "denominator": 57,
+              "value": 0.7719298245614035
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 94,
+              "denominator": 98,
+              "value": 0.9591836734693877
+            },
+            "comparison_accuracy": {
+              "numerator": 47,
+              "denominator": 49,
+              "value": 0.9591836734693877
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 8,
+              "value": 0.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 87,
+              "denominator": 91,
+              "value": 0.9560439560439561
+            },
+            "full_formulation_accuracy": {
+              "numerator": 29,
+              "denominator": 31,
+              "value": 0.9354838709677419
+            },
+            "ingredient_precision": {
+              "numerator": 100,
+              "denominator": 100,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 100,
+              "denominator": 104,
+              "value": 0.9615384615384616
+            },
+            "ingredient_f1": {
+              "numerator": 200,
+              "denominator": 204,
+              "value": 0.9803921568627451
+            },
+            "family_groups": 44
+          }
+        },
+        "interpretation": "All fixed eligible targets stay in denominators, including invalid/missing outputs. These are source-reviewed challenge metrics, not clinical truth.",
+        "scoring_contract_version": "challenge_v1_scoring_contract_3",
+        "benchmark_contract_version": "challenge_v1_contract_2"
+      },
+      "finding_counts": {
+        "missing_or_invalid_prediction": 27
+      }
+    },
+    "deterministic_retrieval": {
+      "overall": {
+        "counts": {
+          "abstention_target_requests": 22,
+          "cases": 230,
+          "correct_abstentions": 22,
+          "correct_comparisons": 201,
+          "correct_full_formulation": 134,
+          "correct_statuses": 431,
+          "correct_unique_ndc": 381,
+          "full_formulation_target_requests": 134,
+          "ingredient_fn": 0,
+          "ingredient_fp": 0,
+          "ingredient_set_exact": 409,
+          "ingredient_target_requests": 409,
+          "ingredient_tp": 666,
+          "joint_correct_cases": 230,
+          "product_requests": 431,
+          "supported_comparison_cases": 201,
+          "unique_ndc_target_requests": 381,
+          "unknown_ingredient_names": 0,
+          "valid_outputs": 230
+        },
+        "valid_output_rate": {
+          "numerator": 230,
+          "denominator": 230,
+          "value": 1.0
+        },
+        "joint_case_accuracy": {
+          "numerator": 230,
+          "denominator": 230,
+          "value": 1.0
+        },
+        "ingredient_set_accuracy": {
+          "numerator": 409,
+          "denominator": 409,
+          "value": 1.0
+        },
+        "comparison_accuracy": {
+          "numerator": 201,
+          "denominator": 201,
+          "value": 1.0
+        },
+        "abstention_accuracy": {
+          "numerator": 22,
+          "denominator": 22,
+          "value": 1.0
+        },
+        "unique_ndc_accuracy": {
+          "numerator": 381,
+          "denominator": 381,
+          "value": 1.0
+        },
+        "full_formulation_accuracy": {
+          "numerator": 134,
+          "denominator": 134,
+          "value": 1.0
+        },
+        "ingredient_precision": {
+          "numerator": 666,
+          "denominator": 666,
+          "value": 1.0
+        },
+        "ingredient_recall": {
+          "numerator": 666,
+          "denominator": 666,
+          "value": 1.0
+        },
+        "ingredient_f1": {
+          "numerator": 1332,
+          "denominator": 1332,
+          "value": 1.0
+        },
+        "family_groups": 153
+      },
+      "by_role": {
+        "ambiguity": {
+          "counts": {
+            "abstention_target_requests": 22,
+            "cases": 22,
+            "correct_abstentions": 22,
+            "correct_statuses": 22,
+            "ingredient_fp": 0,
+            "joint_correct_cases": 22,
+            "product_requests": 22,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 22
+          },
+          "valid_output_rate": {
+            "numerator": 22,
+            "denominator": 22,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 22,
+            "denominator": 22,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "comparison_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "abstention_accuracy": {
+            "numerator": 22,
+            "denominator": 22,
+            "value": 1.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "full_formulation_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "ingredient_precision": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "ingredient_recall": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "ingredient_f1": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "family_groups": 21
+        },
+        "different_with_ndc": {
+          "counts": {
+            "cases": 86,
+            "correct_comparisons": 86,
+            "correct_full_formulation": 26,
+            "correct_statuses": 172,
+            "correct_unique_ndc": 170,
+            "full_formulation_target_requests": 26,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 172,
+            "ingredient_target_requests": 172,
+            "ingredient_tp": 304,
+            "joint_correct_cases": 86,
+            "product_requests": 172,
+            "supported_comparison_cases": 86,
+            "unique_ndc_target_requests": 170,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 86
+          },
+          "valid_output_rate": {
+            "numerator": 86,
+            "denominator": 86,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 86,
+            "denominator": 86,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 172,
+            "denominator": 172,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 86,
+            "denominator": 86,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 170,
+            "denominator": 170,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 26,
+            "denominator": 26,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 304,
+            "denominator": 304,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 304,
+            "denominator": 304,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 608,
+            "denominator": 608,
+            "value": 1.0
+          },
+          "family_groups": 48
+        },
+        "different_without_ndc": {
+          "counts": {
+            "cases": 34,
+            "correct_comparisons": 34,
+            "correct_full_formulation": 23,
+            "correct_statuses": 68,
+            "correct_unique_ndc": 65,
+            "full_formulation_target_requests": 23,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 68,
+            "ingredient_target_requests": 68,
+            "ingredient_tp": 110,
+            "joint_correct_cases": 34,
+            "product_requests": 68,
+            "supported_comparison_cases": 34,
+            "unique_ndc_target_requests": 65,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 34
+          },
+          "valid_output_rate": {
+            "numerator": 34,
+            "denominator": 34,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 34,
+            "denominator": 34,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 68,
+            "denominator": 68,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 34,
+            "denominator": 34,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 65,
+            "denominator": 65,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 23,
+            "denominator": 23,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 110,
+            "denominator": 110,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 110,
+            "denominator": 110,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 220,
+            "denominator": 220,
+            "value": 1.0
+          },
+          "family_groups": 17
+        },
+        "same_ingredient_control": {
+          "counts": {
+            "cases": 80,
+            "correct_comparisons": 80,
+            "correct_full_formulation": 77,
+            "correct_statuses": 160,
+            "correct_unique_ndc": 137,
+            "full_formulation_target_requests": 77,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 160,
+            "ingredient_target_requests": 160,
+            "ingredient_tp": 238,
+            "joint_correct_cases": 80,
+            "product_requests": 160,
+            "supported_comparison_cases": 80,
+            "unique_ndc_target_requests": 137,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 80
+          },
+          "valid_output_rate": {
+            "numerator": 80,
+            "denominator": 80,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 80,
+            "denominator": 80,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 160,
+            "denominator": 160,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 80,
+            "denominator": 80,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 137,
+            "denominator": 137,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 77,
+            "denominator": 77,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 238,
+            "denominator": 238,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 238,
+            "denominator": 238,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 476,
+            "denominator": 476,
+            "value": 1.0
+          },
+          "family_groups": 82
+        },
+        "supplementary": {
+          "counts": {
+            "cases": 8,
+            "correct_comparisons": 1,
+            "correct_full_formulation": 8,
+            "correct_statuses": 9,
+            "correct_unique_ndc": 9,
+            "full_formulation_target_requests": 8,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 9,
+            "ingredient_target_requests": 9,
+            "ingredient_tp": 14,
+            "joint_correct_cases": 8,
+            "product_requests": 9,
+            "supported_comparison_cases": 1,
+            "unique_ndc_target_requests": 9,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 8
+          },
+          "valid_output_rate": {
+            "numerator": 8,
+            "denominator": 8,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 8,
+            "denominator": 8,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 9,
+            "denominator": 9,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 1,
+            "denominator": 1,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 9,
+            "denominator": 9,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 8,
+            "denominator": 8,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 28,
+            "denominator": 28,
+            "value": 1.0
+          },
+          "family_groups": 8
+        }
+      },
+      "by_category": {
+        "conventional_oral_analgesic_cold_allergy": {
+          "counts": {
+            "abstention_target_requests": 1,
+            "cases": 29,
+            "correct_abstentions": 1,
+            "correct_comparisons": 21,
+            "correct_full_formulation": 40,
+            "correct_statuses": 50,
+            "correct_unique_ndc": 40,
+            "full_formulation_target_requests": 40,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 49,
+            "ingredient_target_requests": 49,
+            "ingredient_tp": 76,
+            "joint_correct_cases": 29,
+            "product_requests": 50,
+            "supported_comparison_cases": 21,
+            "unique_ndc_target_requests": 40,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 29
+          },
+          "valid_output_rate": {
+            "numerator": 29,
+            "denominator": 29,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 29,
+            "denominator": 29,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 49,
+            "denominator": 49,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 21,
+            "denominator": 21,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 1,
+            "denominator": 1,
+            "value": 1.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 40,
+            "denominator": 40,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 40,
+            "denominator": 40,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 76,
+            "denominator": 76,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 76,
+            "denominator": 76,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 152,
+            "denominator": 152,
+            "value": 1.0
+          },
+          "family_groups": 21
+        },
+        "dental_otc": {
+          "counts": {
+            "cases": 7,
+            "correct_comparisons": 7,
+            "correct_statuses": 14,
+            "correct_unique_ndc": 14,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 14,
+            "ingredient_target_requests": 14,
+            "ingredient_tp": 16,
+            "joint_correct_cases": 7,
+            "product_requests": 14,
+            "supported_comparison_cases": 7,
+            "unique_ndc_target_requests": 14,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 7
+          },
+          "valid_output_rate": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 7,
+            "denominator": 7,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 14,
+            "denominator": 14,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 0,
+            "denominator": 0,
+            "value": null
+          },
+          "ingredient_precision": {
+            "numerator": 16,
+            "denominator": 16,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 16,
+            "denominator": 16,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 32,
+            "denominator": 32,
+            "value": 1.0
+          },
+          "family_groups": 5
+        },
+        "mixed_categories": {
+          "counts": {
+            "abstention_target_requests": 3,
+            "cases": 30,
+            "correct_abstentions": 3,
+            "correct_comparisons": 27,
+            "correct_full_formulation": 12,
+            "correct_statuses": 57,
+            "correct_unique_ndc": 54,
+            "full_formulation_target_requests": 12,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 54,
+            "ingredient_target_requests": 54,
+            "ingredient_tp": 91,
+            "joint_correct_cases": 30,
+            "product_requests": 57,
+            "supported_comparison_cases": 27,
+            "unique_ndc_target_requests": 54,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 30
+          },
+          "valid_output_rate": {
+            "numerator": 30,
+            "denominator": 30,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 30,
+            "denominator": 30,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 54,
+            "denominator": 54,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 27,
+            "denominator": 27,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 54,
+            "denominator": 54,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 12,
+            "denominator": 12,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 91,
+            "denominator": 91,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 91,
+            "denominator": 91,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 182,
+            "denominator": 182,
+            "value": 1.0
+          },
+          "family_groups": 13
+        },
+        "other_or_unclassified_otc": {
+          "counts": {
+            "abstention_target_requests": 1,
+            "cases": 10,
+            "correct_abstentions": 1,
+            "correct_comparisons": 9,
+            "correct_full_formulation": 6,
+            "correct_statuses": 19,
+            "correct_unique_ndc": 16,
+            "full_formulation_target_requests": 6,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 18,
+            "ingredient_target_requests": 18,
+            "ingredient_tp": 20,
+            "joint_correct_cases": 10,
+            "product_requests": 19,
+            "supported_comparison_cases": 9,
+            "unique_ndc_target_requests": 16,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 10
+          },
+          "valid_output_rate": {
+            "numerator": 10,
+            "denominator": 10,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 10,
+            "denominator": 10,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 18,
+            "denominator": 18,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 9,
+            "denominator": 9,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 1,
+            "denominator": 1,
+            "value": 1.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 16,
+            "denominator": 16,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 6,
+            "denominator": 6,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 20,
+            "denominator": 20,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 20,
+            "denominator": 20,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 40,
+            "denominator": 40,
+            "value": 1.0
+          },
+          "family_groups": 7
+        },
+        "other_oral_otc": {
+          "counts": {
+            "abstention_target_requests": 4,
+            "cases": 41,
+            "correct_abstentions": 4,
+            "correct_comparisons": 37,
+            "correct_full_formulation": 42,
+            "correct_statuses": 78,
+            "correct_unique_ndc": 69,
+            "full_formulation_target_requests": 42,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 74,
+            "ingredient_target_requests": 74,
+            "ingredient_tp": 93,
+            "joint_correct_cases": 41,
+            "product_requests": 78,
+            "supported_comparison_cases": 37,
+            "unique_ndc_target_requests": 69,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 41
+          },
+          "valid_output_rate": {
+            "numerator": 41,
+            "denominator": 41,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 41,
+            "denominator": 41,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 74,
+            "denominator": 74,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 37,
+            "denominator": 37,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 4,
+            "denominator": 4,
+            "value": 1.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 69,
+            "denominator": 69,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 42,
+            "denominator": 42,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 93,
+            "denominator": 93,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 93,
+            "denominator": 93,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 186,
+            "denominator": 186,
+            "value": 1.0
+          },
+          "family_groups": 22
+        },
+        "sunscreen": {
+          "counts": {
+            "abstention_target_requests": 5,
+            "cases": 56,
+            "correct_abstentions": 5,
+            "correct_comparisons": 51,
+            "correct_full_formulation": 3,
+            "correct_statuses": 107,
+            "correct_unique_ndc": 97,
+            "full_formulation_target_requests": 3,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 102,
+            "ingredient_target_requests": 102,
+            "ingredient_tp": 266,
+            "joint_correct_cases": 56,
+            "product_requests": 107,
+            "supported_comparison_cases": 51,
+            "unique_ndc_target_requests": 97,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 56
+          },
+          "valid_output_rate": {
+            "numerator": 56,
+            "denominator": 56,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 56,
+            "denominator": 56,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 102,
+            "denominator": 102,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 51,
+            "denominator": 51,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 5,
+            "denominator": 5,
+            "value": 1.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 97,
+            "denominator": 97,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 3,
+            "denominator": 3,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 266,
+            "denominator": 266,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 266,
+            "denominator": 266,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 532,
+            "denominator": 532,
+            "value": 1.0
+          },
+          "family_groups": 46
+        },
+        "topical_otc": {
+          "counts": {
+            "abstention_target_requests": 8,
+            "cases": 57,
+            "correct_abstentions": 8,
+            "correct_comparisons": 49,
+            "correct_full_formulation": 31,
+            "correct_statuses": 106,
+            "correct_unique_ndc": 91,
+            "full_formulation_target_requests": 31,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 98,
+            "ingredient_target_requests": 98,
+            "ingredient_tp": 104,
+            "joint_correct_cases": 57,
+            "product_requests": 106,
+            "supported_comparison_cases": 49,
+            "unique_ndc_target_requests": 91,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 57
+          },
+          "valid_output_rate": {
+            "numerator": 57,
+            "denominator": 57,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 57,
+            "denominator": 57,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 98,
+            "denominator": 98,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 49,
+            "denominator": 49,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 8,
+            "denominator": 8,
+            "value": 1.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 91,
+            "denominator": 91,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 31,
+            "denominator": 31,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 104,
+            "denominator": 104,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 104,
+            "denominator": 104,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 208,
+            "denominator": 208,
+            "value": 1.0
+          },
+          "family_groups": 44
+        }
+      },
+      "interpretation": "All fixed eligible targets stay in denominators, including invalid/missing outputs. These are source-reviewed challenge metrics, not clinical truth.",
+      "scoring_contract_version": "challenge_v1_scoring_contract_3",
+      "benchmark_contract_version": "challenge_v1_contract_2",
+      "by_reference_provenance": {
+        "source_consistency_only": {
+          "overall": {
+            "counts": {
+              "abstention_target_requests": 22,
+              "cases": 230,
+              "correct_abstentions": 22,
+              "correct_comparisons": 201,
+              "correct_full_formulation": 134,
+              "correct_statuses": 431,
+              "correct_unique_ndc": 381,
+              "full_formulation_target_requests": 134,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 409,
+              "ingredient_target_requests": 409,
+              "ingredient_tp": 666,
+              "joint_correct_cases": 230,
+              "product_requests": 431,
+              "supported_comparison_cases": 201,
+              "unique_ndc_target_requests": 381,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 230
+            },
+            "valid_output_rate": {
+              "numerator": 230,
+              "denominator": 230,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 230,
+              "denominator": 230,
+              "value": 1.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 409,
+              "denominator": 409,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 201,
+              "denominator": 201,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 22,
+              "denominator": 22,
+              "value": 1.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 381,
+              "denominator": 381,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 134,
+              "denominator": 134,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 666,
+              "denominator": 666,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 666,
+              "denominator": 666,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 1332,
+              "denominator": 1332,
+              "value": 1.0
+            },
+            "family_groups": 153
+          },
+          "by_role": {
+            "ambiguity": {
+              "counts": {
+                "abstention_target_requests": 22,
+                "cases": 22,
+                "correct_abstentions": 22,
+                "correct_statuses": 22,
+                "ingredient_fp": 0,
+                "joint_correct_cases": 22,
+                "product_requests": 22,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 22
+              },
+              "valid_output_rate": {
+                "numerator": 22,
+                "denominator": 22,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 22,
+                "denominator": 22,
+                "value": 1.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "comparison_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "abstention_accuracy": {
+                "numerator": 22,
+                "denominator": 22,
+                "value": 1.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "full_formulation_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "ingredient_precision": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "ingredient_recall": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "ingredient_f1": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "family_groups": 21
+            },
+            "different_with_ndc": {
+              "counts": {
+                "cases": 86,
+                "correct_comparisons": 86,
+                "correct_full_formulation": 26,
+                "correct_statuses": 172,
+                "correct_unique_ndc": 170,
+                "full_formulation_target_requests": 26,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 172,
+                "ingredient_target_requests": 172,
+                "ingredient_tp": 304,
+                "joint_correct_cases": 86,
+                "product_requests": 172,
+                "supported_comparison_cases": 86,
+                "unique_ndc_target_requests": 170,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 86
+              },
+              "valid_output_rate": {
+                "numerator": 86,
+                "denominator": 86,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 86,
+                "denominator": 86,
+                "value": 1.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 172,
+                "denominator": 172,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 86,
+                "denominator": 86,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 170,
+                "denominator": 170,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 26,
+                "denominator": 26,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 304,
+                "denominator": 304,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 304,
+                "denominator": 304,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 608,
+                "denominator": 608,
+                "value": 1.0
+              },
+              "family_groups": 48
+            },
+            "different_without_ndc": {
+              "counts": {
+                "cases": 34,
+                "correct_comparisons": 34,
+                "correct_full_formulation": 23,
+                "correct_statuses": 68,
+                "correct_unique_ndc": 65,
+                "full_formulation_target_requests": 23,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 68,
+                "ingredient_target_requests": 68,
+                "ingredient_tp": 110,
+                "joint_correct_cases": 34,
+                "product_requests": 68,
+                "supported_comparison_cases": 34,
+                "unique_ndc_target_requests": 65,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 34
+              },
+              "valid_output_rate": {
+                "numerator": 34,
+                "denominator": 34,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 34,
+                "denominator": 34,
+                "value": 1.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 68,
+                "denominator": 68,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 34,
+                "denominator": 34,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 65,
+                "denominator": 65,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 23,
+                "denominator": 23,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 110,
+                "denominator": 110,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 110,
+                "denominator": 110,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 220,
+                "denominator": 220,
+                "value": 1.0
+              },
+              "family_groups": 17
+            },
+            "same_ingredient_control": {
+              "counts": {
+                "cases": 80,
+                "correct_comparisons": 80,
+                "correct_full_formulation": 77,
+                "correct_statuses": 160,
+                "correct_unique_ndc": 137,
+                "full_formulation_target_requests": 77,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 160,
+                "ingredient_target_requests": 160,
+                "ingredient_tp": 238,
+                "joint_correct_cases": 80,
+                "product_requests": 160,
+                "supported_comparison_cases": 80,
+                "unique_ndc_target_requests": 137,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 80
+              },
+              "valid_output_rate": {
+                "numerator": 80,
+                "denominator": 80,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 80,
+                "denominator": 80,
+                "value": 1.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 160,
+                "denominator": 160,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 80,
+                "denominator": 80,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 137,
+                "denominator": 137,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 77,
+                "denominator": 77,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 238,
+                "denominator": 238,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 238,
+                "denominator": 238,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 476,
+                "denominator": 476,
+                "value": 1.0
+              },
+              "family_groups": 82
+            },
+            "supplementary": {
+              "counts": {
+                "cases": 8,
+                "correct_comparisons": 1,
+                "correct_full_formulation": 8,
+                "correct_statuses": 9,
+                "correct_unique_ndc": 9,
+                "full_formulation_target_requests": 8,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 9,
+                "ingredient_target_requests": 9,
+                "ingredient_tp": 14,
+                "joint_correct_cases": 8,
+                "product_requests": 9,
+                "supported_comparison_cases": 1,
+                "unique_ndc_target_requests": 9,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 8
+              },
+              "valid_output_rate": {
+                "numerator": 8,
+                "denominator": 8,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 8,
+                "denominator": 8,
+                "value": 1.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 9,
+                "denominator": 9,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 1,
+                "denominator": 1,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 9,
+                "denominator": 9,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 8,
+                "denominator": 8,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 14,
+                "denominator": 14,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 14,
+                "denominator": 14,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 28,
+                "denominator": 28,
+                "value": 1.0
+              },
+              "family_groups": 8
+            }
+          },
+          "by_category": {
+            "conventional_oral_analgesic_cold_allergy": {
+              "counts": {
+                "abstention_target_requests": 1,
+                "cases": 29,
+                "correct_abstentions": 1,
+                "correct_comparisons": 21,
+                "correct_full_formulation": 40,
+                "correct_statuses": 50,
+                "correct_unique_ndc": 40,
+                "full_formulation_target_requests": 40,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 49,
+                "ingredient_target_requests": 49,
+                "ingredient_tp": 76,
+                "joint_correct_cases": 29,
+                "product_requests": 50,
+                "supported_comparison_cases": 21,
+                "unique_ndc_target_requests": 40,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 29
+              },
+              "valid_output_rate": {
+                "numerator": 29,
+                "denominator": 29,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 29,
+                "denominator": 29,
+                "value": 1.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 49,
+                "denominator": 49,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 21,
+                "denominator": 21,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 1,
+                "denominator": 1,
+                "value": 1.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 40,
+                "denominator": 40,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 40,
+                "denominator": 40,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 76,
+                "denominator": 76,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 76,
+                "denominator": 76,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 152,
+                "denominator": 152,
+                "value": 1.0
+              },
+              "family_groups": 21
+            },
+            "dental_otc": {
+              "counts": {
+                "cases": 7,
+                "correct_comparisons": 7,
+                "correct_statuses": 14,
+                "correct_unique_ndc": 14,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 14,
+                "ingredient_target_requests": 14,
+                "ingredient_tp": 16,
+                "joint_correct_cases": 7,
+                "product_requests": 14,
+                "supported_comparison_cases": 7,
+                "unique_ndc_target_requests": 14,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 7
+              },
+              "valid_output_rate": {
+                "numerator": 7,
+                "denominator": 7,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 7,
+                "denominator": 7,
+                "value": 1.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 14,
+                "denominator": 14,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 7,
+                "denominator": 7,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 14,
+                "denominator": 14,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 0,
+                "denominator": 0,
+                "value": null
+              },
+              "ingredient_precision": {
+                "numerator": 16,
+                "denominator": 16,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 16,
+                "denominator": 16,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 32,
+                "denominator": 32,
+                "value": 1.0
+              },
+              "family_groups": 5
+            },
+            "mixed_categories": {
+              "counts": {
+                "abstention_target_requests": 3,
+                "cases": 30,
+                "correct_abstentions": 3,
+                "correct_comparisons": 27,
+                "correct_full_formulation": 12,
+                "correct_statuses": 57,
+                "correct_unique_ndc": 54,
+                "full_formulation_target_requests": 12,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 54,
+                "ingredient_target_requests": 54,
+                "ingredient_tp": 91,
+                "joint_correct_cases": 30,
+                "product_requests": 57,
+                "supported_comparison_cases": 27,
+                "unique_ndc_target_requests": 54,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 30
+              },
+              "valid_output_rate": {
+                "numerator": 30,
+                "denominator": 30,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 30,
+                "denominator": 30,
+                "value": 1.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 54,
+                "denominator": 54,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 27,
+                "denominator": 27,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 3,
+                "denominator": 3,
+                "value": 1.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 54,
+                "denominator": 54,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 12,
+                "denominator": 12,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 91,
+                "denominator": 91,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 91,
+                "denominator": 91,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 182,
+                "denominator": 182,
+                "value": 1.0
+              },
+              "family_groups": 13
+            },
+            "other_or_unclassified_otc": {
+              "counts": {
+                "abstention_target_requests": 1,
+                "cases": 10,
+                "correct_abstentions": 1,
+                "correct_comparisons": 9,
+                "correct_full_formulation": 6,
+                "correct_statuses": 19,
+                "correct_unique_ndc": 16,
+                "full_formulation_target_requests": 6,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 18,
+                "ingredient_target_requests": 18,
+                "ingredient_tp": 20,
+                "joint_correct_cases": 10,
+                "product_requests": 19,
+                "supported_comparison_cases": 9,
+                "unique_ndc_target_requests": 16,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 10
+              },
+              "valid_output_rate": {
+                "numerator": 10,
+                "denominator": 10,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 10,
+                "denominator": 10,
+                "value": 1.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 18,
+                "denominator": 18,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 9,
+                "denominator": 9,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 1,
+                "denominator": 1,
+                "value": 1.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 16,
+                "denominator": 16,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 6,
+                "denominator": 6,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 20,
+                "denominator": 20,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 20,
+                "denominator": 20,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 40,
+                "denominator": 40,
+                "value": 1.0
+              },
+              "family_groups": 7
+            },
+            "other_oral_otc": {
+              "counts": {
+                "abstention_target_requests": 4,
+                "cases": 41,
+                "correct_abstentions": 4,
+                "correct_comparisons": 37,
+                "correct_full_formulation": 42,
+                "correct_statuses": 78,
+                "correct_unique_ndc": 69,
+                "full_formulation_target_requests": 42,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 74,
+                "ingredient_target_requests": 74,
+                "ingredient_tp": 93,
+                "joint_correct_cases": 41,
+                "product_requests": 78,
+                "supported_comparison_cases": 37,
+                "unique_ndc_target_requests": 69,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 41
+              },
+              "valid_output_rate": {
+                "numerator": 41,
+                "denominator": 41,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 41,
+                "denominator": 41,
+                "value": 1.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 74,
+                "denominator": 74,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 37,
+                "denominator": 37,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 4,
+                "denominator": 4,
+                "value": 1.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 69,
+                "denominator": 69,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 42,
+                "denominator": 42,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 93,
+                "denominator": 93,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 93,
+                "denominator": 93,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 186,
+                "denominator": 186,
+                "value": 1.0
+              },
+              "family_groups": 22
+            },
+            "sunscreen": {
+              "counts": {
+                "abstention_target_requests": 5,
+                "cases": 56,
+                "correct_abstentions": 5,
+                "correct_comparisons": 51,
+                "correct_full_formulation": 3,
+                "correct_statuses": 107,
+                "correct_unique_ndc": 97,
+                "full_formulation_target_requests": 3,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 102,
+                "ingredient_target_requests": 102,
+                "ingredient_tp": 266,
+                "joint_correct_cases": 56,
+                "product_requests": 107,
+                "supported_comparison_cases": 51,
+                "unique_ndc_target_requests": 97,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 56
+              },
+              "valid_output_rate": {
+                "numerator": 56,
+                "denominator": 56,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 56,
+                "denominator": 56,
+                "value": 1.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 102,
+                "denominator": 102,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 51,
+                "denominator": 51,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 5,
+                "denominator": 5,
+                "value": 1.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 97,
+                "denominator": 97,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 3,
+                "denominator": 3,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 266,
+                "denominator": 266,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 266,
+                "denominator": 266,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 532,
+                "denominator": 532,
+                "value": 1.0
+              },
+              "family_groups": 46
+            },
+            "topical_otc": {
+              "counts": {
+                "abstention_target_requests": 8,
+                "cases": 57,
+                "correct_abstentions": 8,
+                "correct_comparisons": 49,
+                "correct_full_formulation": 31,
+                "correct_statuses": 106,
+                "correct_unique_ndc": 91,
+                "full_formulation_target_requests": 31,
+                "ingredient_fn": 0,
+                "ingredient_fp": 0,
+                "ingredient_set_exact": 98,
+                "ingredient_target_requests": 98,
+                "ingredient_tp": 104,
+                "joint_correct_cases": 57,
+                "product_requests": 106,
+                "supported_comparison_cases": 49,
+                "unique_ndc_target_requests": 91,
+                "unknown_ingredient_names": 0,
+                "valid_outputs": 57
+              },
+              "valid_output_rate": {
+                "numerator": 57,
+                "denominator": 57,
+                "value": 1.0
+              },
+              "joint_case_accuracy": {
+                "numerator": 57,
+                "denominator": 57,
+                "value": 1.0
+              },
+              "ingredient_set_accuracy": {
+                "numerator": 98,
+                "denominator": 98,
+                "value": 1.0
+              },
+              "comparison_accuracy": {
+                "numerator": 49,
+                "denominator": 49,
+                "value": 1.0
+              },
+              "abstention_accuracy": {
+                "numerator": 8,
+                "denominator": 8,
+                "value": 1.0
+              },
+              "unique_ndc_accuracy": {
+                "numerator": 91,
+                "denominator": 91,
+                "value": 1.0
+              },
+              "full_formulation_accuracy": {
+                "numerator": 31,
+                "denominator": 31,
+                "value": 1.0
+              },
+              "ingredient_precision": {
+                "numerator": 104,
+                "denominator": 104,
+                "value": 1.0
+              },
+              "ingredient_recall": {
+                "numerator": 104,
+                "denominator": 104,
+                "value": 1.0
+              },
+              "ingredient_f1": {
+                "numerator": 208,
+                "denominator": 208,
+                "value": 1.0
+              },
+              "family_groups": 44
+            }
+          },
+          "interpretation": "All fixed eligible targets stay in denominators, including invalid/missing outputs. These are source-reviewed challenge metrics, not clinical truth.",
+          "scoring_contract_version": "challenge_v1_scoring_contract_3",
+          "benchmark_contract_version": "challenge_v1_contract_2"
+        },
+        "independently_audited": {
+          "overall": {
+            "counts": {},
+            "valid_output_rate": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "joint_case_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "comparison_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "full_formulation_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_f1": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "family_groups": 0
+          },
+          "by_role": {},
+          "by_category": {},
+          "interpretation": "All fixed eligible targets stay in denominators, including invalid/missing outputs. These are source-reviewed challenge metrics, not clinical truth.",
+          "scoring_contract_version": "challenge_v1_scoring_contract_3",
+          "benchmark_contract_version": "challenge_v1_contract_2"
+        }
+      },
+      "core_excluding_supplementary": {
+        "overall": {
+          "counts": {
+            "abstention_target_requests": 22,
+            "cases": 222,
+            "correct_abstentions": 22,
+            "correct_comparisons": 200,
+            "correct_full_formulation": 126,
+            "correct_statuses": 422,
+            "correct_unique_ndc": 372,
+            "full_formulation_target_requests": 126,
+            "ingredient_fn": 0,
+            "ingredient_fp": 0,
+            "ingredient_set_exact": 400,
+            "ingredient_target_requests": 400,
+            "ingredient_tp": 652,
+            "joint_correct_cases": 222,
+            "product_requests": 422,
+            "supported_comparison_cases": 200,
+            "unique_ndc_target_requests": 372,
+            "unknown_ingredient_names": 0,
+            "valid_outputs": 222
+          },
+          "valid_output_rate": {
+            "numerator": 222,
+            "denominator": 222,
+            "value": 1.0
+          },
+          "joint_case_accuracy": {
+            "numerator": 222,
+            "denominator": 222,
+            "value": 1.0
+          },
+          "ingredient_set_accuracy": {
+            "numerator": 400,
+            "denominator": 400,
+            "value": 1.0
+          },
+          "comparison_accuracy": {
+            "numerator": 200,
+            "denominator": 200,
+            "value": 1.0
+          },
+          "abstention_accuracy": {
+            "numerator": 22,
+            "denominator": 22,
+            "value": 1.0
+          },
+          "unique_ndc_accuracy": {
+            "numerator": 372,
+            "denominator": 372,
+            "value": 1.0
+          },
+          "full_formulation_accuracy": {
+            "numerator": 126,
+            "denominator": 126,
+            "value": 1.0
+          },
+          "ingredient_precision": {
+            "numerator": 652,
+            "denominator": 652,
+            "value": 1.0
+          },
+          "ingredient_recall": {
+            "numerator": 652,
+            "denominator": 652,
+            "value": 1.0
+          },
+          "ingredient_f1": {
+            "numerator": 1304,
+            "denominator": 1304,
+            "value": 1.0
+          },
+          "family_groups": 147
+        },
+        "by_role": {
+          "ambiguity": {
+            "counts": {
+              "abstention_target_requests": 22,
+              "cases": 22,
+              "correct_abstentions": 22,
+              "correct_statuses": 22,
+              "ingredient_fp": 0,
+              "joint_correct_cases": 22,
+              "product_requests": 22,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 22
+            },
+            "valid_output_rate": {
+              "numerator": 22,
+              "denominator": 22,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 22,
+              "denominator": 22,
+              "value": 1.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "comparison_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "abstention_accuracy": {
+              "numerator": 22,
+              "denominator": 22,
+              "value": 1.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "full_formulation_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_precision": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_recall": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_f1": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "family_groups": 21
+          },
+          "different_with_ndc": {
+            "counts": {
+              "cases": 86,
+              "correct_comparisons": 86,
+              "correct_full_formulation": 26,
+              "correct_statuses": 172,
+              "correct_unique_ndc": 170,
+              "full_formulation_target_requests": 26,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 172,
+              "ingredient_target_requests": 172,
+              "ingredient_tp": 304,
+              "joint_correct_cases": 86,
+              "product_requests": 172,
+              "supported_comparison_cases": 86,
+              "unique_ndc_target_requests": 170,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 86
+            },
+            "valid_output_rate": {
+              "numerator": 86,
+              "denominator": 86,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 86,
+              "denominator": 86,
+              "value": 1.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 172,
+              "denominator": 172,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 86,
+              "denominator": 86,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 170,
+              "denominator": 170,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 26,
+              "denominator": 26,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 304,
+              "denominator": 304,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 304,
+              "denominator": 304,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 608,
+              "denominator": 608,
+              "value": 1.0
+            },
+            "family_groups": 48
+          },
+          "different_without_ndc": {
+            "counts": {
+              "cases": 34,
+              "correct_comparisons": 34,
+              "correct_full_formulation": 23,
+              "correct_statuses": 68,
+              "correct_unique_ndc": 65,
+              "full_formulation_target_requests": 23,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 68,
+              "ingredient_target_requests": 68,
+              "ingredient_tp": 110,
+              "joint_correct_cases": 34,
+              "product_requests": 68,
+              "supported_comparison_cases": 34,
+              "unique_ndc_target_requests": 65,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 34
+            },
+            "valid_output_rate": {
+              "numerator": 34,
+              "denominator": 34,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 34,
+              "denominator": 34,
+              "value": 1.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 68,
+              "denominator": 68,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 34,
+              "denominator": 34,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 65,
+              "denominator": 65,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 23,
+              "denominator": 23,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 110,
+              "denominator": 110,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 110,
+              "denominator": 110,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 220,
+              "denominator": 220,
+              "value": 1.0
+            },
+            "family_groups": 17
+          },
+          "same_ingredient_control": {
+            "counts": {
+              "cases": 80,
+              "correct_comparisons": 80,
+              "correct_full_formulation": 77,
+              "correct_statuses": 160,
+              "correct_unique_ndc": 137,
+              "full_formulation_target_requests": 77,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 160,
+              "ingredient_target_requests": 160,
+              "ingredient_tp": 238,
+              "joint_correct_cases": 80,
+              "product_requests": 160,
+              "supported_comparison_cases": 80,
+              "unique_ndc_target_requests": 137,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 80
+            },
+            "valid_output_rate": {
+              "numerator": 80,
+              "denominator": 80,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 80,
+              "denominator": 80,
+              "value": 1.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 160,
+              "denominator": 160,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 80,
+              "denominator": 80,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 137,
+              "denominator": 137,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 77,
+              "denominator": 77,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 238,
+              "denominator": 238,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 238,
+              "denominator": 238,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 476,
+              "denominator": 476,
+              "value": 1.0
+            },
+            "family_groups": 82
+          }
+        },
+        "by_category": {
+          "conventional_oral_analgesic_cold_allergy": {
+            "counts": {
+              "abstention_target_requests": 1,
+              "cases": 21,
+              "correct_abstentions": 1,
+              "correct_comparisons": 20,
+              "correct_full_formulation": 32,
+              "correct_statuses": 41,
+              "correct_unique_ndc": 31,
+              "full_formulation_target_requests": 32,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 40,
+              "ingredient_target_requests": 40,
+              "ingredient_tp": 62,
+              "joint_correct_cases": 21,
+              "product_requests": 41,
+              "supported_comparison_cases": 20,
+              "unique_ndc_target_requests": 31,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 21
+            },
+            "valid_output_rate": {
+              "numerator": 21,
+              "denominator": 21,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 21,
+              "denominator": 21,
+              "value": 1.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 40,
+              "denominator": 40,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 20,
+              "denominator": 20,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 1,
+              "denominator": 1,
+              "value": 1.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 31,
+              "denominator": 31,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 32,
+              "denominator": 32,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 62,
+              "denominator": 62,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 62,
+              "denominator": 62,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 124,
+              "denominator": 124,
+              "value": 1.0
+            },
+            "family_groups": 15
+          },
+          "dental_otc": {
+            "counts": {
+              "cases": 7,
+              "correct_comparisons": 7,
+              "correct_statuses": 14,
+              "correct_unique_ndc": 14,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 14,
+              "ingredient_target_requests": 14,
+              "ingredient_tp": 16,
+              "joint_correct_cases": 7,
+              "product_requests": 14,
+              "supported_comparison_cases": 7,
+              "unique_ndc_target_requests": 14,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 7
+            },
+            "valid_output_rate": {
+              "numerator": 7,
+              "denominator": 7,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 7,
+              "denominator": 7,
+              "value": 1.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 14,
+              "denominator": 14,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 7,
+              "denominator": 7,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 14,
+              "denominator": 14,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 0,
+              "denominator": 0,
+              "value": null
+            },
+            "ingredient_precision": {
+              "numerator": 16,
+              "denominator": 16,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 16,
+              "denominator": 16,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 32,
+              "denominator": 32,
+              "value": 1.0
+            },
+            "family_groups": 5
+          },
+          "mixed_categories": {
+            "counts": {
+              "abstention_target_requests": 3,
+              "cases": 30,
+              "correct_abstentions": 3,
+              "correct_comparisons": 27,
+              "correct_full_formulation": 12,
+              "correct_statuses": 57,
+              "correct_unique_ndc": 54,
+              "full_formulation_target_requests": 12,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 54,
+              "ingredient_target_requests": 54,
+              "ingredient_tp": 91,
+              "joint_correct_cases": 30,
+              "product_requests": 57,
+              "supported_comparison_cases": 27,
+              "unique_ndc_target_requests": 54,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 30
+            },
+            "valid_output_rate": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 30,
+              "denominator": 30,
+              "value": 1.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 54,
+              "denominator": 54,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 27,
+              "denominator": 27,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 3,
+              "denominator": 3,
+              "value": 1.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 54,
+              "denominator": 54,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 12,
+              "denominator": 12,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 91,
+              "denominator": 91,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 91,
+              "denominator": 91,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 182,
+              "denominator": 182,
+              "value": 1.0
+            },
+            "family_groups": 13
+          },
+          "other_or_unclassified_otc": {
+            "counts": {
+              "abstention_target_requests": 1,
+              "cases": 10,
+              "correct_abstentions": 1,
+              "correct_comparisons": 9,
+              "correct_full_formulation": 6,
+              "correct_statuses": 19,
+              "correct_unique_ndc": 16,
+              "full_formulation_target_requests": 6,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 18,
+              "ingredient_target_requests": 18,
+              "ingredient_tp": 20,
+              "joint_correct_cases": 10,
+              "product_requests": 19,
+              "supported_comparison_cases": 9,
+              "unique_ndc_target_requests": 16,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 10
+            },
+            "valid_output_rate": {
+              "numerator": 10,
+              "denominator": 10,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 10,
+              "denominator": 10,
+              "value": 1.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 18,
+              "denominator": 18,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 9,
+              "denominator": 9,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 1,
+              "denominator": 1,
+              "value": 1.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 16,
+              "denominator": 16,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 6,
+              "denominator": 6,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 20,
+              "denominator": 20,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 20,
+              "denominator": 20,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 40,
+              "denominator": 40,
+              "value": 1.0
+            },
+            "family_groups": 7
+          },
+          "other_oral_otc": {
+            "counts": {
+              "abstention_target_requests": 4,
+              "cases": 41,
+              "correct_abstentions": 4,
+              "correct_comparisons": 37,
+              "correct_full_formulation": 42,
+              "correct_statuses": 78,
+              "correct_unique_ndc": 69,
+              "full_formulation_target_requests": 42,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 74,
+              "ingredient_target_requests": 74,
+              "ingredient_tp": 93,
+              "joint_correct_cases": 41,
+              "product_requests": 78,
+              "supported_comparison_cases": 37,
+              "unique_ndc_target_requests": 69,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 41
+            },
+            "valid_output_rate": {
+              "numerator": 41,
+              "denominator": 41,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 41,
+              "denominator": 41,
+              "value": 1.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 74,
+              "denominator": 74,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 37,
+              "denominator": 37,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 4,
+              "denominator": 4,
+              "value": 1.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 69,
+              "denominator": 69,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 42,
+              "denominator": 42,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 93,
+              "denominator": 93,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 93,
+              "denominator": 93,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 186,
+              "denominator": 186,
+              "value": 1.0
+            },
+            "family_groups": 22
+          },
+          "sunscreen": {
+            "counts": {
+              "abstention_target_requests": 5,
+              "cases": 56,
+              "correct_abstentions": 5,
+              "correct_comparisons": 51,
+              "correct_full_formulation": 3,
+              "correct_statuses": 107,
+              "correct_unique_ndc": 97,
+              "full_formulation_target_requests": 3,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 102,
+              "ingredient_target_requests": 102,
+              "ingredient_tp": 266,
+              "joint_correct_cases": 56,
+              "product_requests": 107,
+              "supported_comparison_cases": 51,
+              "unique_ndc_target_requests": 97,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 56
+            },
+            "valid_output_rate": {
+              "numerator": 56,
+              "denominator": 56,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 56,
+              "denominator": 56,
+              "value": 1.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 102,
+              "denominator": 102,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 51,
+              "denominator": 51,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 5,
+              "denominator": 5,
+              "value": 1.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 97,
+              "denominator": 97,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 3,
+              "denominator": 3,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 266,
+              "denominator": 266,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 266,
+              "denominator": 266,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 532,
+              "denominator": 532,
+              "value": 1.0
+            },
+            "family_groups": 46
+          },
+          "topical_otc": {
+            "counts": {
+              "abstention_target_requests": 8,
+              "cases": 57,
+              "correct_abstentions": 8,
+              "correct_comparisons": 49,
+              "correct_full_formulation": 31,
+              "correct_statuses": 106,
+              "correct_unique_ndc": 91,
+              "full_formulation_target_requests": 31,
+              "ingredient_fn": 0,
+              "ingredient_fp": 0,
+              "ingredient_set_exact": 98,
+              "ingredient_target_requests": 98,
+              "ingredient_tp": 104,
+              "joint_correct_cases": 57,
+              "product_requests": 106,
+              "supported_comparison_cases": 49,
+              "unique_ndc_target_requests": 91,
+              "unknown_ingredient_names": 0,
+              "valid_outputs": 57
+            },
+            "valid_output_rate": {
+              "numerator": 57,
+              "denominator": 57,
+              "value": 1.0
+            },
+            "joint_case_accuracy": {
+              "numerator": 57,
+              "denominator": 57,
+              "value": 1.0
+            },
+            "ingredient_set_accuracy": {
+              "numerator": 98,
+              "denominator": 98,
+              "value": 1.0
+            },
+            "comparison_accuracy": {
+              "numerator": 49,
+              "denominator": 49,
+              "value": 1.0
+            },
+            "abstention_accuracy": {
+              "numerator": 8,
+              "denominator": 8,
+              "value": 1.0
+            },
+            "unique_ndc_accuracy": {
+              "numerator": 91,
+              "denominator": 91,
+              "value": 1.0
+            },
+            "full_formulation_accuracy": {
+              "numerator": 31,
+              "denominator": 31,
+              "value": 1.0
+            },
+            "ingredient_precision": {
+              "numerator": 104,
+              "denominator": 104,
+              "value": 1.0
+            },
+            "ingredient_recall": {
+              "numerator": 104,
+              "denominator": 104,
+              "value": 1.0
+            },
+            "ingredient_f1": {
+              "numerator": 208,
+              "denominator": 208,
+              "value": 1.0
+            },
+            "family_groups": 44
+          }
+        },
+        "interpretation": "All fixed eligible targets stay in denominators, including invalid/missing outputs. These are source-reviewed challenge metrics, not clinical truth.",
+        "scoring_contract_version": "challenge_v1_scoring_contract_3",
+        "benchmark_contract_version": "challenge_v1_contract_2"
+      },
+      "finding_counts": {}
+    }
+  }
+}

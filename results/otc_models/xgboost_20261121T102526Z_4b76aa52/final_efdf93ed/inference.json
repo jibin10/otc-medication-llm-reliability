@@ -1,0 +1,7 @@
+{
+  "seconds": 1.7619825000001583,
+  "cases_per_second": 130.53478113430714,
+  "model_freeze_sha256": "62334897a66b6760c1bdd486ac06592ae6bff8fb32cb60a06f10746bdef825cb",
+  "source_input_sha256": "ff46bf26471bea90c2c06692c5c2d57cb5c84fe770a027786a5751c36125d282",
+  "scoring_contract": "challenge_v1_scoring_contract_3"
+}

@@ -1,0 +1,142 @@
+{
+  "scoring_contract_version": "challenge_v1_scoring_contract_3",
+  "benchmark_contract_version": "challenge_v1_contract_2",
+  "tests": {
+    "passed": 62,
+    "by_module": {
+      "tests.test_challenge_scoring_v3": 22,
+      "tests.test_challenge_v1": 40
+    },
+    "failures": 0,
+    "errors": 0
+  },
+  "saved_validation_prediction_replay": {
+    "cases": 230,
+    "historical_metrics_reproduced": true,
+    "corrected_joint_accuracy": {
+      "numerator": 230,
+      "denominator": 230,
+      "value": 1.0
+    },
+    "all_non_joint_metrics_unchanged": true
+  },
+  "synthetic_perturbations_of_saved_validation_outputs": [
+    {
+      "synthetic_defect": "strength",
+      "historical_joint_accuracy": {
+        "numerator": 230,
+        "denominator": 230,
+        "value": 1.0
+      },
+      "corrected_joint_accuracy": {
+        "numerator": 229,
+        "denominator": 230,
+        "value": 0.9956521739130435
+      },
+      "non_joint_metrics_unchanged": true
+    },
+    {
+      "synthetic_defect": "dosage_form",
+      "historical_joint_accuracy": {
+        "numerator": 230,
+        "denominator": 230,
+        "value": 1.0
+      },
+      "corrected_joint_accuracy": {
+        "numerator": 229,
+        "denominator": 230,
+        "value": 0.9956521739130435
+      },
+      "non_joint_metrics_unchanged": true
+    },
+    {
+      "synthetic_defect": "route",
+      "historical_joint_accuracy": {
+        "numerator": 230,
+        "denominator": 230,
+        "value": 1.0
+      },
+      "corrected_joint_accuracy": {
+        "numerator": 229,
+        "denominator": 230,
+        "value": 0.9956521739130435
+      },
+      "non_joint_metrics_unchanged": true
+    },
+    {
+      "synthetic_defect": "missing",
+      "historical_joint_accuracy": {
+        "numerator": 230,
+        "denominator": 230,
+        "value": 1.0
+      },
+      "corrected_joint_accuracy": {
+        "numerator": 229,
+        "denominator": 230,
+        "value": 0.9956521739130435
+      },
+      "non_joint_metrics_unchanged": true
+    }
+  ],
+  "protected_files_before": {
+    "results/challenge_v1/accepted_review_snapshot.PRIVATE.csv": "c89ea4d944bb16de131611f0976c833b312b6d974be91b64913a8edaad9924f6",
+    "results/challenge_v1/benchmark.PRIVATE.jsonl": "8fd146ae2dea44e90d2fc83a3f5901f3f40a3b8ade3a6ee4eee827d43e299fb9",
+    "results/challenge_v1/common_evidence.PRIVATE.jsonl": "ff46bf26471bea90c2c06692c5c2d57cb5c84fe770a027786a5751c36125d282",
+    "results/challenge_v1/contradictions.PRIVATE.jsonl": "ab05160e8039bc1d744f9a19265ed9b6678d49d9bf5d69e781f442e9a9e36e85",
+    "results/challenge_v1/deterministic_predictions.PRIVATE.jsonl": "ffab21b4543dadeba70df4c1eca3cea2f4b68f65873d1a49b28a0d1286d5e499",
+    "results/challenge_v1/diagnostic_cases.PRIVATE.jsonl": "041ea819e8be421a977d08c882519cb1414639bef7754b451f74101271ca39c2",
+    "results/challenge_v1/ingredient_identity_mapping.PRIVATE.jsonl": "1176694c7765ec10a8444c607cf59738d68cb724bf2f72e63347968c3f5ece26",
+    "results/challenge_v1/review_decisions.PRIVATE.csv": "b50b62574c80833cffbe784b9ec1224501572c6a0719dfeb214cc7f8a90d4c83",
+    "results/challenge_v1/source_review.PRIVATE.jsonl": "c8ee672ff88b02a31e456bea0e3d1af649409ffe2a5dde37b057aef725c6c722",
+    "results/challenge_v1/training_allowlist.PRIVATE.csv": "13612b743ceeac0a3389a4d35d9decff9628026a47ad9e7b12cf3084633bfd15",
+    "results/challenge_v1/training_quarantine.PRIVATE.jsonl": "b6dcc0df82a0ff72781b634866585a7f971eab252cf58ec3fd4e0088e5cfbb24",
+    "results/challenge_v1/selection_policy.json": "26fb6ea541f17eb15361f692af75acf711f03640f2019957ef59fed6fc48658a",
+    "results/challenge_v1/output_schema.json": "cd0760af20476c18a45e0af521909a1211641f8b85bec27dba74c451660d420f",
+    "results/challenge_v1/scoring_specifications.json": "d7acba523342b8bd93809c43c87a74eaa8eb153ec9423e54f0ab7c86d7f29551",
+    "results/challenge_v1/deterministic_metrics.json": "34b1cdbf137b64af3af8046bd0d1a254d445f0a5097d37b98808fdd9a629582d",
+    "results/challenge_v1/summary.json": "56b5ee1cc1ff4ba922efd3dd02dd9151c5f0a4e4231f0ca2c75a93416498612b",
+    "results/challenge_v1/evidence_manifest.json": "ecd93136d0968b6e816651f3158766ac0132e46d052be7dd5718da7dd4ceac08",
+    "results/challenge_v1/STAGE5C_FINAL_REPORT.md": "87d12ac76e903102314fe9835fd5b604335615252823ec36e072fae5a2f77518",
+    "results/challenge_v1/checks.junit.xml": "6ad7f15603bd8b19c03521ede458f18975d469974de14cb7e4cee9157235104e",
+    "results/challenge_v1/build_corrections.json": "20779c6d95414031c96b7ca2d76546eb21a9fb128a948d855fbba4f6baaf1952",
+    "results/challenge_v1/freeze_manifest.json": "05f7bdbd156ba9bb8013f15a57f1e39b4af9fcfa32e006ff5f648a7be30279c7",
+    "src/hrp/challenge_evaluation.py": "040164b712f8a3347008406c8f3d3241b9f05172ba7913eed49d5c9cc4dda39a",
+    "tools/build_challenge_v1.py": "a902abd957f18d00b537c8c3584bcf370e6eeda19ee792eaf2cf71c8a36e447e",
+    "tests/test_challenge_v1.py": "ef2c27c836ba2c65413423f0196d5ee60e9a20111144a146ab10a2fb1a46ac68"
+  },
+  "protected_files_after": {
+    "results/challenge_v1/accepted_review_snapshot.PRIVATE.csv": "c89ea4d944bb16de131611f0976c833b312b6d974be91b64913a8edaad9924f6",
+    "results/challenge_v1/benchmark.PRIVATE.jsonl": "8fd146ae2dea44e90d2fc83a3f5901f3f40a3b8ade3a6ee4eee827d43e299fb9",
+    "results/challenge_v1/common_evidence.PRIVATE.jsonl": "ff46bf26471bea90c2c06692c5c2d57cb5c84fe770a027786a5751c36125d282",
+    "results/challenge_v1/contradictions.PRIVATE.jsonl": "ab05160e8039bc1d744f9a19265ed9b6678d49d9bf5d69e781f442e9a9e36e85",
+    "results/challenge_v1/deterministic_predictions.PRIVATE.jsonl": "ffab21b4543dadeba70df4c1eca3cea2f4b68f65873d1a49b28a0d1286d5e499",
+    "results/challenge_v1/diagnostic_cases.PRIVATE.jsonl": "041ea819e8be421a977d08c882519cb1414639bef7754b451f74101271ca39c2",
+    "results/challenge_v1/ingredient_identity_mapping.PRIVATE.jsonl": "1176694c7765ec10a8444c607cf59738d68cb724bf2f72e63347968c3f5ece26",
+    "results/challenge_v1/review_decisions.PRIVATE.csv": "b50b62574c80833cffbe784b9ec1224501572c6a0719dfeb214cc7f8a90d4c83",
+    "results/challenge_v1/source_review.PRIVATE.jsonl": "c8ee672ff88b02a31e456bea0e3d1af649409ffe2a5dde37b057aef725c6c722",
+    "results/challenge_v1/training_allowlist.PRIVATE.csv": "13612b743ceeac0a3389a4d35d9decff9628026a47ad9e7b12cf3084633bfd15",
+    "results/challenge_v1/training_quarantine.PRIVATE.jsonl": "b6dcc0df82a0ff72781b634866585a7f971eab252cf58ec3fd4e0088e5cfbb24",
+    "results/challenge_v1/selection_policy.json": "26fb6ea541f17eb15361f692af75acf711f03640f2019957ef59fed6fc48658a",
+    "results/challenge_v1/output_schema.json": "cd0760af20476c18a45e0af521909a1211641f8b85bec27dba74c451660d420f",
+    "results/challenge_v1/scoring_specifications.json": "d7acba523342b8bd93809c43c87a74eaa8eb153ec9423e54f0ab7c86d7f29551",
+    "results/challenge_v1/deterministic_metrics.json": "34b1cdbf137b64af3af8046bd0d1a254d445f0a5097d37b98808fdd9a629582d",
+    "results/challenge_v1/summary.json": "56b5ee1cc1ff4ba922efd3dd02dd9151c5f0a4e4231f0ca2c75a93416498612b",
+    "results/challenge_v1/evidence_manifest.json": "ecd93136d0968b6e816651f3158766ac0132e46d052be7dd5718da7dd4ceac08",
+    "results/challenge_v1/STAGE5C_FINAL_REPORT.md": "87d12ac76e903102314fe9835fd5b604335615252823ec36e072fae5a2f77518",
+    "results/challenge_v1/checks.junit.xml": "6ad7f15603bd8b19c03521ede458f18975d469974de14cb7e4cee9157235104e",
+    "results/challenge_v1/build_corrections.json": "20779c6d95414031c96b7ca2d76546eb21a9fb128a948d855fbba4f6baaf1952",
+    "results/challenge_v1/freeze_manifest.json": "05f7bdbd156ba9bb8013f15a57f1e39b4af9fcfa32e006ff5f648a7be30279c7",
+    "src/hrp/challenge_evaluation.py": "040164b712f8a3347008406c8f3d3241b9f05172ba7913eed49d5c9cc4dda39a",
+    "tools/build_challenge_v1.py": "a902abd957f18d00b537c8c3584bcf370e6eeda19ee792eaf2cf71c8a36e447e",
+    "tests/test_challenge_v1.py": "ef2c27c836ba2c65413423f0196d5ee60e9a20111144a146ab10a2fb1a46ac68"
+  },
+  "all_protected_files_unchanged": true,
+  "safeguards": {
+    "sealed_test_accessed_or_hashed": false,
+    "dataset_construction_rerun": false,
+    "source_review_rerun": false,
+    "new_model_predictions_generated": false,
+    "gemma_inference_or_training_run": false
+  },
+  "note": "Existing saved validation predictions were replayed without altering them. Perturbations are explicit software checks, not model or clinical results."
+}

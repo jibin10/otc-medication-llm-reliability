@@ -1,0 +1,247 @@
+{
+  "thresholds": {
+    "sufficiency": 0.6,
+    "form": 0.75,
+    "candidate": 0.6
+  },
+  "status": {
+    "raw": {
+      "labels": [
+        "EXACT_NDC_IDENTIFIED",
+        "FORMULATION_IDENTIFIED",
+        "INGREDIENT_SET_IDENTIFIED",
+        "INSUFFICIENT_INFORMATION",
+        "NO_MATCH",
+        "SOURCE_CONFLICT"
+      ],
+      "counts": [
+        [
+          1202,
+          0,
+          0,
+          40,
+          0,
+          10
+        ],
+        [
+          0,
+          13,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          197,
+          6,
+          3,
+          2439,
+          0,
+          17
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          6,
+          0,
+          0
+        ]
+      ],
+      "per_class": [
+        {
+          "label": "EXACT_NDC_IDENTIFIED",
+          "support": 1252,
+          "precision": 0.8591851322373124,
+          "recall": 0.9600638977635783,
+          "f1": 0.9068276122218031
+        },
+        {
+          "label": "FORMULATION_IDENTIFIED",
+          "support": 16,
+          "precision": 0.6842105263157895,
+          "recall": 0.8125,
+          "f1": 0.7428571428571429
+        },
+        {
+          "label": "INGREDIENT_SET_IDENTIFIED",
+          "support": 6,
+          "precision": 0.5,
+          "recall": 1.0,
+          "f1": 0.6666666666666666
+        },
+        {
+          "label": "INSUFFICIENT_INFORMATION",
+          "support": 2662,
+          "precision": 0.9814889336016096,
+          "recall": 0.9162283996994741,
+          "f1": 0.9477365455605207
+        },
+        {
+          "label": "NO_MATCH",
+          "support": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "SOURCE_CONFLICT",
+          "support": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      ],
+      "accuracy": {
+        "numerator": 3660,
+        "denominator": 3942,
+        "value": 0.928462709284627
+      },
+      "orientation": "rows=true, columns=predicted",
+      "zero_division": 0
+    },
+    "adapted": {
+      "labels": [
+        "EXACT_NDC_IDENTIFIED",
+        "FORMULATION_IDENTIFIED",
+        "INGREDIENT_SET_IDENTIFIED",
+        "INSUFFICIENT_INFORMATION",
+        "NO_MATCH",
+        "SOURCE_CONFLICT"
+      ],
+      "counts": [
+        [
+          1158,
+          0,
+          0,
+          84,
+          0,
+          10
+        ],
+        [
+          0,
+          12,
+          3,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          0,
+          0,
+          0
+        ],
+        [
+          67,
+          0,
+          0,
+          2578,
+          0,
+          17
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          6,
+          0,
+          0
+        ]
+      ],
+      "per_class": [
+        {
+          "label": "EXACT_NDC_IDENTIFIED",
+          "support": 1252,
+          "precision": 0.9453061224489796,
+          "recall": 0.9249201277955271,
+          "f1": 0.9350020185708519
+        },
+        {
+          "label": "FORMULATION_IDENTIFIED",
+          "support": 16,
+          "precision": 1.0,
+          "recall": 0.75,
+          "f1": 0.8571428571428571
+        },
+        {
+          "label": "INGREDIENT_SET_IDENTIFIED",
+          "support": 6,
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "f1": 0.8
+        },
+        {
+          "label": "INSUFFICIENT_INFORMATION",
+          "support": 2662,
+          "precision": 0.9659048332708879,
+          "recall": 0.9684447783621337,
+          "f1": 0.9671731382479835
+        },
+        {
+          "label": "NO_MATCH",
+          "support": 0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        },
+        {
+          "label": "SOURCE_CONFLICT",
+          "support": 6,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0
+        }
+      ],
+      "accuracy": {
+        "numerator": 3754,
+        "denominator": 3942,
+        "value": 0.9523084728564181
+      },
+      "orientation": "rows=true, columns=predicted",
+      "zero_division": 0
+    }
+  },
+  "evidence_sufficiency_accuracy": {
+    "raw": {
+      "numerator": 3748,
+      "denominator": 3942,
+      "value": 0.9507864028411973
+    },
+    "adapted": {
+      "numerator": 3780,
+      "denominator": 3942,
+      "value": 0.958904109589041
+    }
+  },
+  "prediction_seconds": 0.1742670999992697,
+  "requests": 3942,
+  "requests_per_second": 22620.448725069273,
+  "metrics_file": "calibration_metrics.json"
+}

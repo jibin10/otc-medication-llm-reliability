@@ -1,0 +1,136 @@
+{
+  "configuration": {
+    "runner_format_version": 4,
+    "freeze_manifest_sha256": "05f7bdbd156ba9bb8013f15a57f1e39b4af9fcfa32e006ff5f648a7be30279c7",
+    "scoring_amendment_sha256": "72ee5287d630278656e25fe84ab173318ee37768fe6bbfa660a092265a165e49",
+    "dataset": "challenge_v1",
+    "input_sha256": "ff46bf26471bea90c2c06692c5c2d57cb5c84fe770a027786a5751c36125d282",
+    "output_schema_sha256": "5ea81c884e2c8ec058776fd5d855b0d51505188c17357bc53c5e4cb6693c7e6d",
+    "inference_order_sha256": "c15cc80e5e24f91b2a2cb7e2e72bef0cb76aeadcde00752d0437ed142fdbc8e4",
+    "parser_version": [
+      "gemma4_native_v1",
+      "gemma4_json_fence_v1"
+    ],
+    "native_decoder_sha256": "7d75137bda691ab71120206d98c79147fa54f36dd0e3f3b3a6fcb63f8ea25e8a",
+    "fence_normalizer_sha256": "87e95207260cbef63706da2a60f3c8d3af7b9065a4a7696eb4627a6f76800213",
+    "available_cases": 230,
+    "prompt_version": "challenge_v1_contract_2",
+    "benchmark_contract_version": "challenge_v1_contract_2",
+    "scoring_contract_version": "challenge_v1_scoring_contract_3",
+    "model_id": "google/gemma-4-31B-it",
+    "requested_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+    "model_loading": {
+      "dtype": "bfloat16",
+      "device_map": "auto",
+      "local_files_only": true
+    },
+    "quantization": {
+      "load_in_4bit": true,
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_use_double_quant": true
+    },
+    "generation": {
+      "do_sample": false,
+      "temperature": 1.0,
+      "top_k": 50,
+      "top_p": 1.0,
+      "num_beams": 1,
+      "num_return_sequences": 1,
+      "max_new_tokens": 1024,
+      "use_cache": true,
+      "return_dict_in_generate": false,
+      "bos_token_id": 2,
+      "eos_token_id": [
+        1,
+        106,
+        50
+      ],
+      "pad_token_id": 0,
+      "seed": 42,
+      "enable_thinking": false,
+      "add_generation_prompt": true
+    },
+    "decoding": {
+      "skip_special_tokens": false,
+      "clean_up_tokenization_spaces": false,
+      "response_decoding": "gemma4_native_v1"
+    },
+    "response_normalization": "gemma4_json_fence_v1",
+    "checkpoint_kind": "original"
+  },
+  "model_load_attempts": [
+    {
+      "python_version": "3.12.3",
+      "package_versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "5.16.1",
+        "accelerate": "1.13.0",
+        "bitsandbytes": "0.50.2",
+        "huggingface-hub": "1.17.0",
+        "tokenizers": "0.23.1",
+        "jsonschema": "4.26.0"
+      },
+      "loaded_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "load_seconds": 201.497032,
+      "load_gpu_memory": {
+        "peak_allocated_bytes": 18302838272,
+        "peak_reserved_bytes": 18335399936
+      },
+      "gpu_name": "NVIDIA A100-SXM4-80GB",
+      "gpu_total_bytes": 85094825984,
+      "torch_cuda_version": "12.8"
+    },
+    {
+      "python_version": "3.12.3",
+      "package_versions": {
+        "torch": "2.11.0+cu128",
+        "transformers": "5.16.1",
+        "accelerate": "1.13.0",
+        "bitsandbytes": "0.50.2",
+        "huggingface-hub": "1.17.0",
+        "tokenizers": "0.23.1",
+        "jsonschema": "4.26.0"
+      },
+      "loaded_revision": "842da3794eaa0b77d5f08bae87a17459d91ff475",
+      "load_seconds": 164.203349,
+      "load_gpu_memory": {
+        "peak_allocated_bytes": 18302838272,
+        "peak_reserved_bytes": 18335399936
+      },
+      "gpu_name": "NVIDIA A100-SXM4-80GB",
+      "gpu_total_bytes": 85094825984,
+      "torch_cuda_version": "12.8"
+    }
+  ],
+  "requested_cases": 230,
+  "pending_requested_cases": 0,
+  "attempted_cases": 230,
+  "completed_cases": 230,
+  "valid_json_cases": 230,
+  "valid_schema_cases": 230,
+  "valid_contract_cases": 203,
+  "failure_categories": {
+    "invalid_contract": 27
+  },
+  "stop_reasons": {
+    "eos_token": 230
+  },
+  "generation_latency_seconds": {
+    "sample_count": 230,
+    "total": 10958.266122,
+    "min": 17.950579,
+    "p50": 46.173625,
+    "p95": 66.317386,
+    "max": 93.107933
+  },
+  "generation_gpu_memory": {
+    "peak_allocated_bytes": 39353576448,
+    "peak_reserved_bytes": 44407193600
+  },
+  "updated_at_utc": "2026-11-20T08:22:32.888987+00:00",
+  "raw_strict_json_valid_cases": 5,
+  "normalized_json_valid_cases": 230,
+  "normalized_schema_valid_cases": 230,
+  "fence_removed_cases": 225
+}

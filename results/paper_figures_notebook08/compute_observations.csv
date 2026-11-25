@@ -1,0 +1,4 @@
+Model,Training min,Inference seconds,Saved artifact MB,Hardware
+XGBoost,11.63,1.7619825000001583,10.79,CPU
+Set Transformer,20.02,3.88419246400008,3.55,T4 GPU
+Gemma 4 31B,Not fine-tuned,10958.266122,31B parameters,A100 GPU

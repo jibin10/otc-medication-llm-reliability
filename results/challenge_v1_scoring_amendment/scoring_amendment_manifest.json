@@ -1,0 +1,97 @@
+{
+  "amendment": "challenge_v1_joint_accuracy_scoring_correction",
+  "status": "VERIFIED_READY_FOR_STAGE6",
+  "scoring_contract_version": "challenge_v1_scoring_contract_3",
+  "benchmark_contract_version": "challenge_v1_contract_2",
+  "frozen_benchmark_manifest": {
+    "path": "results/challenge_v1/freeze_manifest.json",
+    "sha256": "05f7bdbd156ba9bb8013f15a57f1e39b4af9fcfa32e006ff5f648a7be30279c7",
+    "modified": false
+  },
+  "original_scorer": {
+    "path": "src/hrp/challenge_evaluation.py",
+    "sha256": "040164b712f8a3347008406c8f3d3241b9f05172ba7913eed49d5c9cc4dda39a",
+    "modified": false,
+    "retained_for_historical_reproducibility": true
+  },
+  "corrected_scorer": {
+    "path": "src/hrp/challenge_scoring_v3.py",
+    "sha256": "70e76f011d903b9181e4bebbda0b6ad2c77adf3a7b04983613b6947b22d98aed",
+    "entry_point": "hrp.challenge_scoring_v3.score_predictions",
+    "signature": "score_predictions(cases, predictions, payloads, resolver)"
+  },
+  "correction": {
+    "problem": "Contract 2 records correct_full_formulation but omits formulation correctness from joint_correct_cases.",
+    "implementation": "Reuse the frozen scorer and its existing _form_key-normalized per-case correct_full_formulation counts. Remove one joint credit only if the old case passed joint scoring and not every applicable formulation passed. Update overall, role and category joint numerators/values; never change their denominators.",
+    "applicability": "A formulation is applicable exactly when target.formulation is not null. Incorrect or missing applicable formulations fail joint accuracy. No formulation target means no additional joint penalty.",
+    "changed_metrics": [
+      "joint_correct_cases",
+      "joint_case_accuracy"
+    ],
+    "unchanged": "All non-joint metrics, fixed denominators, identity normalization, full-formulation scoring, exact NDC/status/comparison/abstention rules, parser validation, invalid-output handling, case selection, reference labels, evidence and training allowlist.",
+    "added_result_metadata": [
+      "scoring_contract_version",
+      "benchmark_contract_version"
+    ],
+    "implementation_does_not_patch_module_globals_or_duplicate_original_scorer": true
+  },
+  "stage6_usage": [
+    "from hrp.challenge_scoring_v3 import score_predictions, SCORING_CONTRACT_VERSION",
+    "metrics = score_predictions(cases, predictions, payloads, resolver)",
+    "Keep all other evidence, schema, identity and training interfaces at frozen challenge_v1_contract_2; record both version fields and this amendment/code hash with experiment metrics."
+  ],
+  "verification": {
+    "passed_tests": 62,
+    "test_modules": {
+      "tests.test_challenge_scoring_v3": 22,
+      "tests.test_challenge_v1": 40
+    },
+    "saved_validation_prediction_replay": {
+      "cases": 230,
+      "historical_metrics_reproduced": true,
+      "corrected_joint_accuracy": {
+        "numerator": 230,
+        "denominator": 230,
+        "value": 1.0
+      },
+      "all_non_joint_metrics_unchanged": true
+    },
+    "all_24_protected_files_unchanged": true,
+    "regression_coverage": [
+      "wrong strength",
+      "wrong dosage form",
+      "wrong route",
+      "wrong salt identity in formulation",
+      "missing formulation",
+      "fully correct formulation",
+      "normalization-equivalent formulation",
+      "reference formulation unavailable",
+      "invalid or absent predictions",
+      "one/both comparison products wrong",
+      "overall/role/category aggregation",
+      "unchanged other scoring components",
+      "abstention",
+      "empty inputs",
+      "no scorer file I/O",
+      "partition and case-ID safeguards"
+    ],
+    "evidence_note": "Existing saved validation predictions were replayed without altering them. Perturbations are explicit software checks, not model or clinical results."
+  },
+  "artifacts": {
+    "preservation_before.json": "754fb4db9890d05bdb736ce49f3bed0b77aebdb5691e1528189cb8a4edf85225",
+    "checks.junit.xml": "bc32e0dd1f0fda92cc3d0e3d9feade6f772981896ee9e2ef24e1b05cb55f443e",
+    "verification_report.json": "999b3f2f3fcba119a2bba50c8c40b7d63cd593b0ee1dbc7d6898d1318dd290b8"
+  },
+  "regression_test_code": {
+    "path": "tests/test_challenge_scoring_v3.py",
+    "sha256": "1a47cb3476cc73921e92bf8fc0c286065f7e425cac472c190bbe72e62572adb8"
+  },
+  "test_command": ".venv/Scripts/python.exe -m pytest -p no:cacheprovider tests/test_challenge_scoring_v3.py tests/test_challenge_v1.py -q",
+  "safeguards": {
+    "sealed_test_accessed_or_hashed": false,
+    "dataset_construction_rerun": false,
+    "source_review_rerun": false,
+    "new_model_predictions_generated": false,
+    "gemma_inference_or_training_run": false
+  }
+}

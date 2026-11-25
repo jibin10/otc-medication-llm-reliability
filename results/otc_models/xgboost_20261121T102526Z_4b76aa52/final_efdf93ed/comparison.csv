@@ -1,0 +1,41 @@
+model,metric,numerator,denominator,value
+XGBoost,valid_output_rate,230,230,1.0
+XGBoost,joint_case_accuracy,183,230,0.7956521739130434
+XGBoost,ingredient_set_accuracy,369,409,0.902200488997555
+XGBoost,comparison_accuracy,169,201,0.8407960199004975
+XGBoost,abstention_accuracy,22,22,1.0
+XGBoost,unique_ndc_accuracy,345,381,0.905511811023622
+XGBoost,full_formulation_accuracy,102,134,0.7611940298507462
+XGBoost,ingredient_precision,605,605,1.0
+XGBoost,ingredient_recall,605,666,0.9084084084084084
+XGBoost,ingredient_f1,1210,1271,0.952006294256491
+Original Gemma 4,valid_output_rate,203,230,0.8826086956521739
+Original Gemma 4,joint_case_accuracy,194,230,0.8434782608695652
+Original Gemma 4,ingredient_set_accuracy,400,409,0.9779951100244498
+Original Gemma 4,comparison_accuracy,196,201,0.9751243781094527
+Original Gemma 4,abstention_accuracy,0,22,0.0
+Original Gemma 4,unique_ndc_accuracy,372,381,0.9763779527559056
+Original Gemma 4,full_formulation_accuracy,127,134,0.9477611940298507
+Original Gemma 4,ingredient_precision,656,656,1.0
+Original Gemma 4,ingredient_recall,656,666,0.984984984984985
+Original Gemma 4,ingredient_f1,1312,1322,0.9924357034795764
+Deterministic sources,valid_output_rate,230,230,1.0
+Deterministic sources,joint_case_accuracy,230,230,1.0
+Deterministic sources,ingredient_set_accuracy,409,409,1.0
+Deterministic sources,comparison_accuracy,201,201,1.0
+Deterministic sources,abstention_accuracy,22,22,1.0
+Deterministic sources,unique_ndc_accuracy,381,381,1.0
+Deterministic sources,full_formulation_accuracy,134,134,1.0
+Deterministic sources,ingredient_precision,666,666,1.0
+Deterministic sources,ingredient_recall,666,666,1.0
+Deterministic sources,ingredient_f1,1332,1332,1.0
+Hybrid Set Transformer,valid_output_rate,230,230,1.0
+Hybrid Set Transformer,joint_case_accuracy,193,230,0.8391304347826087
+Hybrid Set Transformer,ingredient_set_accuracy,373,409,0.9119804400977995
+Hybrid Set Transformer,comparison_accuracy,168,201,0.835820895522388
+Hybrid Set Transformer,abstention_accuracy,22,22,1.0
+Hybrid Set Transformer,unique_ndc_accuracy,373,381,0.979002624671916
+Hybrid Set Transformer,full_formulation_accuracy,108,134,0.8059701492537313
+Hybrid Set Transformer,ingredient_precision,617,617,1.0
+Hybrid Set Transformer,ingredient_recall,617,666,0.9264264264264265
+Hybrid Set Transformer,ingredient_f1,1234,1283,0.9618082618862042

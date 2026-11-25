@@ -1,0 +1,64 @@
+{
+  "created_utc": "2026-11-23T17:16:11.932884+00:00",
+  "benchmark_contract": "challenge_v1_contract_2",
+  "scoring_contract": "challenge_v1_scoring_contract_3",
+  "case_count": 230,
+  "models": {
+    "XGBoost": {
+      "joint_correct": 183,
+      "joint_total": 230,
+      "valid_outputs": 230
+    },
+    "Hybrid Set Transformer": {
+      "joint_correct": 193,
+      "joint_total": 230,
+      "valid_outputs": 230
+    },
+    "Original Gemma 4": {
+      "joint_correct": 194,
+      "joint_total": 230,
+      "valid_outputs": 203
+    },
+    "Deterministic sources": {
+      "joint_correct": 230,
+      "joint_total": 230,
+      "valid_outputs": 230
+    }
+  },
+  "input_file_sha256": {
+    "benchmark": "8fd146ae2dea44e90d2fc83a3f5901f3f40a3b8ade3a6ee4eee827d43e299fb9",
+    "evidence": "ff46bf26471bea90c2c06692c5c2d57cb5c84fe770a027786a5751c36125d282",
+    "identities": "1176694c7765ec10a8444c607cf59738d68cb724bf2f72e63347968c3f5ece26",
+    "deterministic": "ffab21b4543dadeba70df4c1eca3cea2f4b68f65873d1a49b28a0d1286d5e499",
+    "archived_metrics": "a8550cdd91a965dad9741c66ce7401cbc3ec1408167f7df90b0a14343ffc5e12",
+    "archived_table": "3de1082551ff51872adc5e2f7e17caec5bf3a7c1810b5a7a63cafe4641ee0b0b",
+    "runtime": "b6cb6a5b3a7ce9a00366232a22bffd0cc0cb9351847ef090715023aa49eacd12",
+    "xgboost": "90b28ebd34f3faf162d34cff747330b7f73787173a4693ddc2d865f434af267d",
+    "set_transformer": "188423e0591b01ae2ebe738d21b816c988a01b6d237d34571279ed649f6db2c4",
+    "gemma": "ea3bb0915b8f9203b38e46c26447312c567dccbec1916d689f7e106aca2c6b7f",
+    "set_history": "22f1fa9ac9f3f8b13a76164f9d3fb9f068ab14e1eea0e708a3b4c1be19f55ed8",
+    "scorer": "70e76f011d903b9181e4bebbda0b6ad2c77adf3a7b04983613b6947b22d98aed"
+  },
+  "publication_cautions": [
+    "Selected validation-derived challenge, not original sealed test",
+    "Source-derived references and deterministic policy are not independent clinical truth",
+    "Gemma has 27 invalid attempts, retained as scoring failures",
+    "Latency was measured on different hardware and pipelines",
+    "Adapter contribution is not the same as learned-model capability"
+  ],
+  "aggregate_outputs": [
+    "challenge_role_results.csv",
+    "compute_observations.csv",
+    "exploratory_family_cluster_bootstrap.csv",
+    "gemma_output_outcomes.csv",
+    "model_comparison_table.csv",
+    "source_coverage_audited.csv",
+    "verification_and_abstention.csv",
+    "challenge_categories.pdf",
+    "full_training_curve.pdf",
+    "gemma_output_outcomes.pdf",
+    "joint_accuracy.pdf",
+    "source_eligibility.pdf",
+    "verification_abstention.pdf"
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "complete_training": true,
+  "model_config": {
+    "hidden": 128,
+    "heads": 4,
+    "layers": 2,
+    "dropout": 0.1,
+    "active_status": [
+      true,
+      true,
+      true,
+      true,
+      false,
+      true
+    ]
+  },
+  "training_config": {
+    "seed": 42,
+    "batch_size": 32,
+    "max_epochs": 20,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.001,
+    "patience": 4,
+    "gradient_clip": 1.0,
+    "loss_weights": {
+      "candidate": 1.0,
+      "sufficiency": 1.0,
+      "status": 1.0,
+      "form": 0.5
+    },
+    "set_slot_budget": 512
+  },
+  "thresholds": {
+    "sufficiency": 0.5,
+    "form": 0.75,
+    "candidate": 0.4
+  },
+  "head_semantics": {
+    "candidate": "source support rather than query intent"
+  },
+  "unsupported_statuses": [
+    "NO_MATCH"
+  ],
+  "binary_target_counts": {
+    "candidate": {
+      "positive": 49920,
+      "negative": 54526
+    },
+    "sufficiency": {
+      "positive": 44638,
+      "negative": 50225
+    },
+    "form": {
+      "positive": 7883,
+      "negative": 86980
+    }
+  },
+  "bundle_manifest_sha256": "a058335aa97fe42907c66b6ce7072ee80cf6e2892d6e5a096509f97dffe28095",
+  "split_data_sha256": {
+    "train": "9aed1209b86993b434e56780ea3c797b3d4fdbe5f70b4021a735a9dc0eb1d53c",
+    "stop": "25a1ab2e6e023119adef69d9b22aaf239ad736f08a46b75377f37f52fbf5ba81",
+    "calibration": "c5b09e98e9b5ad6f3d727317c851d43a4928eceb3902c6628b5caa82abcacc30"
+  },
+  "identity_mapping_sha256": "2dbd9177191ce8461d9583b5f1993e06f63a4012119a3b54254b9f3c38d98048",
+  "output_schema_sha256": "cd0760af20476c18a45e0af521909a1211641f8b85bec27dba74c451660d420f",
+  "shared_code_sha256": "163f5899591c7d5ee8ddfccd458dc152b53b3a15d200cd34617d41157d5eed34",
+  "files": {
+    "encoding.json": "95575d0cd231894d2c31de8cd3d22edbb0bb8e38070cd8815a469815efef7fb6",
+    "frozen/hrp/__init__.py": "2fcb176e7151f443956e2e41b83e0bbe66243ce87f27e6113290939bba91753f",
+    "frozen/hrp/challenge_evaluation.py": "040164b712f8a3347008406c8f3d3241b9f05172ba7913eed49d5c9cc4dda39a",
+    "frozen/hrp/challenge_scoring_v3.py": "70e76f011d903b9181e4bebbda0b6ad2c77adf3a7b04983613b6947b22d98aed",
+    "frozen/hrp/data_cleaning.py": "39bf96c2b5ad7645522f255c65581662f7622756ae8e15688bfd828ab9040c83",
+    "inference_config.json": "d6aa9346356ea4a1191ef42c207502d992492cc00824bf624cbe09dcdf5aedd0",
+    "ingredient_identities.jsonl.gz": "2dbd9177191ce8461d9583b5f1993e06f63a4012119a3b54254b9f3c38d98048",
+    "model.pt": "7efa18b3f9c42e73c73ef8261785e584b16abc7f327f864e04c71aa10bc3bb07",
+    "model_config.json": "a24d74a7ac7743b11e37b24beed01110f14125287129b71b9705e5c362c96481",
+    "model_source.py": "09539e0492b4d24d3372ef84a701229fb6b3cfb0988fce15590c2e59c1dee984",
+    "otc_shared.py": "163f5899591c7d5ee8ddfccd458dc152b53b3a15d200cd34617d41157d5eed34",
+    "output_schema.json": "cd0760af20476c18a45e0af521909a1211641f8b85bec27dba74c451660d420f",
+    "requirements.txt": "451dbebb81f3188b8cc9e0499dc7fb8f58004170fe6cb76c8eae544d1aea2747",
+    "thresholds.json": "7664ce4c241bf1cef5152e3bbe817f5e0ed04b1145f4e08b082ef97ff6af836d"
+  },
+  "checkpoint_identifier": "7efa18b3f9c42e73c73ef8261785e584b16abc7f327f864e04c71aa10bc3bb07",
+  "model_source_sha256": "09539e0492b4d24d3372ef84a701229fb6b3cfb0988fce15590c2e59c1dee984",
+  "best_epoch": 2,
+  "parameter_count": 881513,
+  "model_bytes": 3554354,
+  "training_seconds": 1201.3390398089996,
+  "development_evaluation_seconds": 192.32391004700003,
+  "development_prediction_seconds": 6.1265162589998,
+  "development_requests_per_second": 2423.726531074972,
+  "scoring_contract": "challenge_v1_scoring_contract_3",
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "numpy": "2.4.6",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.0",
+    "scikit-learn": "1.6.1",
+    "jsonschema": "4.26.0"
+  },
+  "device": "cuda",
+  "frozen_at_utc": "2026-11-21T15:19:17.461680+00:00",
+  "challenge_used_for_training_or_calibration": false,
+  "prediction_sha256": "188423e0591b01ae2ebe738d21b816c988a01b6d237d34571279ed649f6db2c4",
+  "challenge_payload_sha256": "47de79c09f8cec4c16db809c8e95be8161e5b6229ef9e450804ec235b1487399",
+  "inference_seconds": 3.88419246400008,
+  "cases_per_second": 59.21436749896214,
+  "request_count": 431,
+  "peak_cuda_bytes": 87150080,
+  "raw_decisions_file": "raw_decisions.jsonl.gz",
+  "raw_decisions_sha256": "d83ddb70598602b769bb3e05a97717bf894fd19d5912af437e9fc18f70275131",
+  "frozen_model_metadata_sha256": "ccf1bdbe8f487716a31f73ac2b8c31c2588519cdf5bf0728d1465fc55f8db762"
+}

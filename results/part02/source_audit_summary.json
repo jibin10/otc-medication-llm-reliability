@@ -1,0 +1,122 @@
+{
+  "ndc": {
+    "source": "ndc",
+    "records": 138333,
+    "unique_primary_ids": 135898,
+    "missing_primary_ids": 0,
+    "duplicate_primary_ids": 2435,
+    "malformed_active_ingredient_lists": 0
+  },
+  "label": {
+    "source": "label",
+    "records": 264736,
+    "unique_primary_ids": 264736,
+    "missing_primary_ids": 0,
+    "duplicate_primary_ids": 0,
+    "unique_set_ids": 264736
+  },
+  "label_shards": {
+    "shards_named": 14,
+    "declared_shards": 14,
+    "missing_shards": []
+  },
+  "rxnorm": [
+    {
+      "file": "RXNCONSO.RRF",
+      "rows": 247388,
+      "wrong_column_count": 0,
+      "missing_rxcui": 0,
+      "duplicate_rxaui": 0,
+      "ndc_attributes": null
+    },
+    {
+      "file": "RXNREL.RRF",
+      "rows": 2594942,
+      "wrong_column_count": 0,
+      "missing_rxcui": null,
+      "duplicate_rxaui": null,
+      "ndc_attributes": null
+    },
+    {
+      "file": "RXNSAT.RRF",
+      "rows": 3384661,
+      "wrong_column_count": 0,
+      "missing_rxcui": 0,
+      "duplicate_rxaui": null,
+      "ndc_attributes": 443319
+    },
+    {
+      "file": "RXNATOMARCHIVE.RRF",
+      "rows": 373584,
+      "wrong_column_count": 0,
+      "missing_rxcui": null,
+      "duplicate_rxaui": null,
+      "ndc_attributes": null
+    },
+    {
+      "file": "RXNCONSO.RRF",
+      "rows": 1214380,
+      "wrong_column_count": 0,
+      "missing_rxcui": 0,
+      "duplicate_rxaui": 0,
+      "ndc_attributes": null
+    },
+    {
+      "file": "RXNCUI.RRF",
+      "rows": 30269,
+      "wrong_column_count": 0,
+      "missing_rxcui": null,
+      "duplicate_rxaui": null,
+      "ndc_attributes": null
+    },
+    {
+      "file": "RXNCUICHANGES.RRF",
+      "rows": 30,
+      "wrong_column_count": 0,
+      "missing_rxcui": null,
+      "duplicate_rxaui": null,
+      "ndc_attributes": null
+    },
+    {
+      "file": "RXNDOC.RRF",
+      "rows": 3445,
+      "wrong_column_count": 0,
+      "missing_rxcui": null,
+      "duplicate_rxaui": null,
+      "ndc_attributes": null
+    },
+    {
+      "file": "RXNREL.RRF",
+      "rows": 7509763,
+      "wrong_column_count": 0,
+      "missing_rxcui": null,
+      "duplicate_rxaui": null,
+      "ndc_attributes": null
+    },
+    {
+      "file": "RXNSAB.RRF",
+      "rows": 13,
+      "wrong_column_count": 0,
+      "missing_rxcui": null,
+      "duplicate_rxaui": null,
+      "ndc_attributes": null
+    },
+    {
+      "file": "RXNSAT.RRF",
+      "rows": 7769848,
+      "wrong_column_count": 0,
+      "missing_rxcui": 0,
+      "duplicate_rxaui": null,
+      "ndc_attributes": 2038850
+    },
+    {
+      "file": "RXNSTY.RRF",
+      "rows": 492418,
+      "wrong_column_count": 0,
+      "missing_rxcui": null,
+      "duplicate_rxaui": null,
+      "ndc_attributes": null
+    }
+  ],
+  "data_handling": "Aggregate source audit, no ingredient normalization or OTC filtering"
+}

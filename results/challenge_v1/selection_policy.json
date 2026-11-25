@@ -1,0 +1,19 @@
+{
+  "version": "challenge_v1_selection_1",
+  "seed": 42,
+  "target_different_ingredient_cases": 120,
+  "target_controls": 80,
+  "target_ambiguity": 40,
+  "minimum_different_ingredient_cases": 50,
+  "minimum_different_groups": 25,
+  "minimum_different_without_ndc": 25,
+  "minimum_without_ndc_groups": 10,
+  "minimum_controls": 30,
+  "minimum_ambiguity": 10,
+  "selection": "Keep source-eligible accepted candidates first; then maximize unused partition groups, prioritize NDC-free descriptions and rotate source categories with seed-42 ties. No model outcomes are used. Target sizes are computational budgets, not power claims.",
+  "relationship": "Accepted PRIMARY/CONTROL relationships, or source-supported identical meaningful names, shared meaningful submitted brand base, same-labeler distinctive prefix variants, or non-generic name ratio >=92. These establish source-name relationships, not demonstrated clinical confusion or verified marketing ownership.",
+  "scope": "Conventional source-labelled OTC categories lead; topical/dental/sunscreen and other source-resolved categories remain explicit strata. Homeopathic records stay secondary.",
+  "evidence": "All input-derived candidates, complete active-ingredient text, original paired RxNorm records and identical source payloads for both Gemma checkpoints and the new deterministic comparator. No candidate or label truncation; no gold/review/split fields.",
+  "unresolved": "Never score unresolved identities, incomplete source composition or disagreements as unique formulations. Preserve them in the decision ledger and diagnostics.",
+  "leakage": "Keep final_v5 immutable. Quarantine training partition groups sharing meaningful submitted brand bases/anchors or ratio>=92 source-name relations with selected validation products. Stage 6 must enforce the frozen training allowlist."
+}

@@ -1,0 +1,6 @@
+{
+  "seed": 42,
+  "label_source": "exact-version sources for approved queries",
+  "extra_training_cases": 0,
+  "source_preparation_seconds": 260.3355303999997
+}

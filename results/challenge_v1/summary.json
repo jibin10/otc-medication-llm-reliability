@@ -1,0 +1,114 @@
+{
+  "benchmark": "challenge_v1",
+  "contract_version": "challenge_v1_contract_2",
+  "seed": 42,
+  "status": "FROZEN",
+  "stage6_decision": "GO",
+  "accepted_review_counts": {
+    "AMBIGUITY_CANDIDATE": 4,
+    "CONTROL_CANDIDATE": 14,
+    "EXCLUDE_PRIMARY": 13,
+    "HOLD_SOURCE_OR_IDENTITY": 38,
+    "PRIMARY_CANDIDATE": 17,
+    "SUPPLEMENTARY": 14
+  },
+  "review_reconciliation": {
+    "AMBIGUITY_CANDIDATE": {
+      "selected_ambiguity": 2,
+      "unresolved": 2
+    },
+    "CONTROL_CANDIDATE": {
+      "selected_same_ingredient_control": 11,
+      "unresolved": 3
+    },
+    "EXCLUDE_PRIMARY": {
+      "excluded": 13
+    },
+    "HOLD_SOURCE_OR_IDENTITY": {
+      "eligible_not_selected": 1,
+      "selected_different_with_ndc": 2,
+      "unresolved": 35
+    },
+    "PRIMARY_CANDIDATE": {
+      "selected_different_with_ndc": 10,
+      "selected_different_without_ndc": 2,
+      "unresolved": 5
+    },
+    "SUPPLEMENTARY": {
+      "selected_supplementary": 8,
+      "unresolved": 6
+    }
+  },
+  "pool_dispositions": {
+    "EXCLUDED": 6204,
+    "UNRESOLVED": 8342,
+    "ACCEPTED": 847
+  },
+  "source_product_assessment_counts": {
+    "UNRESOLVED": 3310,
+    "SUPPORTED": 2821,
+    "CONFLICT": 54
+  },
+  "selected": {
+    "cases": 230,
+    "groups": 153,
+    "roles": {
+      "ambiguity": 22,
+      "different_with_ndc": 86,
+      "different_without_ndc": 34,
+      "same_ingredient_control": 80,
+      "supplementary": 8
+    },
+    "categories": {
+      "conventional_oral_analgesic_cold_allergy": 29,
+      "dental_otc": 7,
+      "mixed_categories": 30,
+      "other_or_unclassified_otc": 10,
+      "other_oral_otc": 41,
+      "sunscreen": 56,
+      "topical_otc": 57
+    },
+    "different_without_ndc": 34,
+    "different_without_ndc_groups": 17
+  },
+  "training_counts": {
+    "allowed_training_cases": 75372,
+    "excluded_training_cases": 5879,
+    "original_training_cases": 81251
+  },
+  "quality_checks": {
+    "authoritative_review_reconciled": true,
+    "all_cases_validation_only": true,
+    "all_selected_source_supported": true,
+    "minimum_different_ingredient_cases": true,
+    "minimum_different_groups": true,
+    "minimum_without_ndc_cases": true,
+    "minimum_without_ndc_groups": true,
+    "minimum_controls": true,
+    "minimum_ambiguity": true,
+    "no_review_exclusions_promoted": true,
+    "source_comparator_contract_self_consistent": true,
+    "all_targeted_tests_passed": true,
+    "original_inputs_unchanged": true
+  },
+  "tests": {
+    "tests": 71,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "safeguards": {
+    "sealed_test_opened": false,
+    "sealed_test_hashed": false,
+    "historical_benchmark_or_baseline_modified": false,
+    "review_decisions_overwritten": false,
+    "model_inference_or_training_run": false,
+    "all_input_hashes_unchanged": true
+  },
+  "runtime": {
+    "python": "3.13.17 (tags/v3.13.17:64e080d, Oct 21 2026, 14:08:53) [MSC v.1944 64 bit (AMD64)]",
+    "pandas": "3.1.1",
+    "rapidfuzz": "3.14.3",
+    "ijson": "3.6.0"
+  }
+}

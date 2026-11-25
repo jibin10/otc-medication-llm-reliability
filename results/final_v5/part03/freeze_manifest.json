@@ -1,0 +1,12 @@
+{
+  "version": "final_v5",
+  "files": {
+    "family_split_manifest.csv": "817a0c82933d550806e577e89c9799f9c47d32ae4b443639fe0bf3c11d1b4d2a",
+    "family_links.csv": "87857c50cb79a235f75baad7cfe3162e8eac3eb39a9b778ab080b224d730b46d",
+    "train.csv": "e96421025237d3d24c14012a75740be474b619e9ff60834807b180061be7545a",
+    "validation.csv": "a9d20161d9a6080236f8899e631b085e1c3193efc38dd954b7aab6f17d44fdc1",
+    "sealed_test.csv": "9c5fd5843fb5b4b7723e19c10d46a4364c71b508a3132e66df3c326c33601efa"
+  },
+  "source_catalog_sha256": "a11481d71c3825e19f5baee40c45f18dd571df90f67abe3a90f82f632a16dc5f",
+  "test_access": "Sealed after source validation. No development predictions permitted."
+}

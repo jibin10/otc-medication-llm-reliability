@@ -1,0 +1,18 @@
+{
+  "XGBoost": {
+    "training_seconds": 698.0192751999966,
+    "inference_seconds": 1.7619825000001583,
+    "model_bytes": 10793331
+  },
+  "Original Gemma 4": {
+    "inference_seconds": 10958.266122,
+    "timing_note": "Archived A100 generation and local CPU pipeline timings use different hardware"
+  },
+  "Hybrid Set Transformer": {
+    "training_seconds": 1201.3390398089996,
+    "inference_seconds": 3.88419246400008,
+    "model_bytes": 3554354,
+    "device": "cuda",
+    "parameter_count": 881513
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "complete_training": true,
+  "configuration_sha256": "1d8fc0070b46451f8541ae6bcf207a4e48607a698c79dfd9c8acecaf9673f6cb",
+  "files": {
+    "candidate.ubj": "ccb71850df7fb1d3283d69112ef3c83cb0275bc3cd4fb2987e45b47b94fc19ed",
+    "configuration.json": "1d8fc0070b46451f8541ae6bcf207a4e48607a698c79dfd9c8acecaf9673f6cb",
+    "encoders.joblib": "29dbf343e0598e1ace5980096deb8cef782cee332dde9929fb2259a9422c2605",
+    "feature_source.py": "c6ed743f1737d6fecf3f7656e439153ec9a39efaf6ed7d92fe2c034ad89d37bd",
+    "features.json": "3c759897c78805e8c348e403ea60e3898b3935586eeb158e7174ef8ec194b9a4",
+    "form.ubj": "a6e6ea74c05d81923d9f5fe054bce741f46f8959bba1374cd06f94bad1bad1e6",
+    "otc_shared.py": "ee62778b01211439713fa257d22ecb3c81d6234651432f0ca90031c20255242a",
+    "requirements.txt": "1d223f62664dcc26e5b9ed615c9848b2d03bf944c9256f6a6cf48677c9b09d20",
+    "status.ubj": "8eb893724bd97276a1afb67717c60b59e470da44144f413d5ec183cc3c1b5e3a",
+    "sufficiency.ubj": "1ba2af142a984dd852806566d6e0028251854adbda3bed00407ffbb31d95c8f7"
+  },
+  "model_bytes": 10793331,
+  "frozen_at_utc": "2026-11-21T11:00:51.731839+00:00",
+  "challenge_used_for_training_or_calibration": false
+}

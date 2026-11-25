@@ -1,0 +1,87 @@
+{
+  "model": {
+    "hidden": 128,
+    "heads": 4,
+    "layers": 2,
+    "dropout": 0.1,
+    "active_status": [
+      true,
+      true,
+      true,
+      true,
+      false,
+      true
+    ]
+  },
+  "training": {
+    "seed": 42,
+    "batch_size": 32,
+    "max_epochs": 20,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.001,
+    "patience": 4,
+    "gradient_clip": 1.0,
+    "loss_weights": {
+      "candidate": 1.0,
+      "sufficiency": 1.0,
+      "status": 1.0,
+      "form": 0.5
+    },
+    "set_slot_budget": 512
+  },
+  "smoke_test": false,
+  "full_training": true,
+  "bundle_manifest_sha256": "a058335aa97fe42907c66b6ce7072ee80cf6e2892d6e5a096509f97dffe28095",
+  "shared_code_sha256": "163f5899591c7d5ee8ddfccd458dc152b53b3a15d200cd34617d41157d5eed34",
+  "encoding": {
+    "text_encoding": "UTF-8 bytes plus one with zero reserved for padding",
+    "vocabulary_size": 257,
+    "normalization": "NFKC and casefold with normalized whitespace",
+    "query_fields": [
+      "name",
+      "dosage_form",
+      "route",
+      "native_strengths",
+      "product_ndc"
+    ],
+    "candidate_fields": [
+      "names",
+      "ingredients",
+      "strengths",
+      "form_route",
+      "identifiers",
+      "source_text"
+    ],
+    "candidate_truncation": false,
+    "text_chunk_bytes": 160
+  },
+  "status_counts": [
+    43089,
+    996,
+    553,
+    48796,
+    0,
+    1429
+  ],
+  "positive_weights": {
+    "candidate": 1.0922676282051282,
+    "sufficiency": 1.1251624176710426,
+    "form": 10.0
+  },
+  "packages": {
+    "torch": "2.14.1+cu130",
+    "numpy": "2.4.6",
+    "pandas": "2.2.3",
+    "matplotlib": "3.10.0",
+    "scikit-learn": "1.6.1",
+    "jsonschema": "4.26.0"
+  },
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "device": "cuda",
+  "precision": "fp16",
+  "numerical_policy": {
+    "max_consecutive_overflows": 3,
+    "max_overflows_per_epoch": 8
+  },
+  "gpu_name": "Tesla T4"
+}

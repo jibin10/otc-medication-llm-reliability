@@ -1,0 +1,22 @@
+{
+  "text_encoding": "UTF-8 bytes plus one with zero reserved for padding",
+  "vocabulary_size": 257,
+  "normalization": "NFKC and casefold with normalized whitespace",
+  "query_fields": [
+    "name",
+    "dosage_form",
+    "route",
+    "native_strengths",
+    "product_ndc"
+  ],
+  "candidate_fields": [
+    "names",
+    "ingredients",
+    "strengths",
+    "form_route",
+    "identifiers",
+    "source_text"
+  ],
+  "candidate_truncation": false,
+  "text_chunk_bytes": 160
+}
